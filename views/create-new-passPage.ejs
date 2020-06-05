@@ -1,0 +1,34 @@
+<html>
+    <head>
+
+    </head>
+    
+    <body>
+        <header>
+            <nav class="navbar navbar-light fixed-top">
+              <a class="navbar-brand" style="color: floralwhite;" href="/">
+                shopKart
+              </a>
+              <a href="http://localhost:8000/" class="btn btn-outline-light" role="button" target="_blank">Click Here To Sign In</a>
+            </nav>
+        </header>
+
+        <div>
+            <%= title %>
+            <% if ( resetToken.isValid ) { %>
+                <form action="/users/password/create-new/<%= resetToken._id %>" method="POST">
+                    <label>New Password</label>
+                    <input type="password" name="new_password" required>
+                    <label>Confirm Password</label>
+                    <input type="password" name="confirm_new_password" required>
+                    <button class="btn btn-outline-primary" type="submit">Submit</button>
+                </form>
+            <% } else { %>
+                <h4>Session Expired!</h4>
+            <% } %>
+        </div>
+        
+    </body>
+</html>
+
+

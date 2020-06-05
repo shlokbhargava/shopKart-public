@@ -1,0 +1,30 @@
+header {
+  font-family: Titillium Web; }
+  header nav {
+    background-color: #516395; }
+    header nav i {
+      color: white; }
+      header nav i span {
+        font-family: Titillium Web;
+        font-size: large; }
+    header nav .form-inline {
+      margin-left: 10%; }
+      header nav .form-inline .form-control {
+        width: 200%; }
+      header nav .form-inline button {
+        left: 70%; }
+    header nav .login-btn {
+      left: 25%;
+      margin-top: 0.5%; }
+    header nav .signup-btn {
+      left: 12.5%;
+      margin-top: 0.5%; }
+    header nav i {
+      font-size: larger; }
+    header nav .logout {
+      left: 11%; }
+    header nav .user-name {
+      left: 23%; }
+
+span {
+  font-size: medium; }

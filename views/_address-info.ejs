@@ -1,0 +1,61 @@
+<h4 class="card-title">Address Information</h4>
+<a class="btn btn-outline-primary" data-toggle="collapse" href="#collapseForm" role="button" aria-expanded="false"
+    aria-controls="collapseExample">
+    <i class="fas fa-plus"></i> &nbsp;Add a New Address
+</a>
+<form action="/users/new-address/<%= profile_user.id %>" class="collapse" id="collapseForm" method="post">
+    <!--CREATE ADDRESS SCHEMA-->
+    <div class="form-row">
+        <div class="form-group col-sm-6">
+            <label>Enter First Name<span class="required">*</span></label>
+            <input type="text" name="firstName" class="form-control" required>
+        </div>
+        <div class="form-group col-sm-6">
+            <label>Enter Last Name</label>
+            <input type="text" name="lastName" class="form-control">
+        </div>
+    </div>
+    <div class="form-row">
+        <div class="form-group col-sm-6">
+            <label>Mobile Number<span class="required">*</span></label>
+            <input type="tel" name="" class="form-control" pattern="[7-9]{1}[0-9]{9}" required>
+        </div>
+        <div class="form-group col-sm-6">
+            <label>Alternate Mobile Number</label>
+            <input type="tel" name="" class="form-control" pattern="[7-9]{1}[0-9]{9}">
+        </div>
+    </div>
+    <div class="form-group">
+        <label>Address<span class="required">*</span></label>
+        <input type="text" class="form-control" name="inputAddress" required>
+    </div>
+    <div class="form-group">
+        <label>Address 2</label>
+        <input type="text" class="form-control" name="inputAddress2" required>
+    </div>
+    <div class="form-row">
+        <div class="form-group col-sm-6">
+            <label>City<span class="required">*</span></label>
+            <input type="text" class="form-control" name="inputCity" required>
+        </div>
+        <div class="form-group col-sm-4">
+            <label>State<span class="required">*</span></label>
+            <input type="text" class="form-control" name="" required>
+        </div>
+        <div class="form-group col-sm-2">
+            <label>Zip<span class="required">*</span></label>
+            <input type="number" class="form-control" name="inputZip" required>
+        </div>
+    </div>
+
+    <button type="submit" class="btn btn-outline-primary">SAVE</button>
+    <button type="reset" class="btn btn-outline-secondary"><i class="fas fa-undo"></i>
+        &nbsp;CLEAR ALL</button>
+</form>
+
+<!-- ADDRESS SCHEMA TODO-->
+<div class="row">
+    <div class="card">
+
+    </div>
+</div>

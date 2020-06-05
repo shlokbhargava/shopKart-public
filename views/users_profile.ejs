@@ -1,0 +1,83 @@
+<link rel="stylesheet" href="/css/users_profile.css">
+
+<h3 class="text-center mt-2"><%= title %></h3>
+
+<div class="container">
+    <div class="row">
+
+        <div class="col-12 col-sm-3 mb-5">
+            <div class="card">
+                <div class="btn card-body btn-outline-primary my-account">
+                    <i class="fas fa-user"></i> &nbsp;My Account
+                </div>
+            </div>
+            <div class="card">
+                <div class="btn card-body my-orders">
+                    <i class="far fa-list-alt"></i> &nbsp;My Orders
+                </div>
+            </div>
+            <div class="card">
+                <div class="btn card-body my-wallet">
+                    <i class="fas fa-wallet"></i> &nbsp;My Wallet
+                </div>
+            </div>
+            <div class="card">
+                <div class="btn card-body customer-support">
+                    <i class="fas fa-headset"></i></i> &nbsp;Customer Support
+                </div>
+            </div>
+            <div class="card mb-5">
+                <div class="btn card-body delete-account">
+                    <i class="fas fa-user-alt-slash"></i></i> &nbsp;Delete&nbsp;Account
+                </div>
+            </div>
+        </div>
+
+        <div class="col-12 col-sm-9 profile-cards mb-2">
+            <!-- My Account -->
+            <div class="card mb-5" id="my-account">
+                <div class="card-body text-primary">
+                    <%- include('_my-account') -%>
+                </div>
+            </div>
+
+
+            <div class="hidden-cards">
+                <!-- My Orders -->
+                <div class="card mb-5" id="my-orders">
+                    <div class="card-body text-primary">
+                        <%- include('_my-orders') -%>
+                    </div>
+                </div>
+
+
+                <!-- My Wallet -->
+                <div class="card mb-5" id="my-wallet">
+                    <div class="card-body text-primary">
+                        <%- include('_my-wallet') -%>
+                    </div>
+                </div>
+
+
+                <!-- Customer Support -->
+                <div class="card mb-5" id="customer-support">
+                    <div class="card-body text-primary">
+                        <%- include('_customer-support') -%>
+                    </div>
+                </div>
+
+
+                <!-- Delete Account -->
+                <div class="card mb-5" id="delete-account">
+                    <div class="card-body text-primary">
+                        <%- include('_delete-account') -%>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </div>
+</div>
+
+
+<script src="/js/users_profile.js"></script>

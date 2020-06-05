@@ -1,0 +1,58 @@
+<html>
+
+<head>
+    <style>
+        .table {
+            margin-left: 25%;
+            width: 50%;
+            height: 60%;
+        }
+
+        table img {
+            height: 30%;
+            width: 100%;
+        }
+
+        tbody {
+            height: 20%;
+            background-color: lightcyan;
+            font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+
+        }
+
+        tbody p {
+            font-size: medium;
+        }
+
+        tbody h3 {
+            text-align: center;
+        }
+
+        .badge {
+            background-color: black;
+            color: white;
+            padding: 10px;
+        }
+    </style>
+</head>
+<table class="table table-borderless">
+    <tbody>
+        <thead>
+            <img src="cid:unique-welcome.jpg" alt="Welcome">
+        </thead>
+    <tbody>
+        <h4>Hey <%= user.firstName %>,</h4>
+        <p>Welcome to shopKart, India's best online shopping website. Now shop from million's of products and get it
+            delivered at your doorstep with shopKartFast delivery. As a welcome gift, we offer you flat 100/- off on
+            your first order, the coupon for which can be found below.</p>
+        <h4>Happy Shopping!</h4>
+        <h4>Team shopKart</h4>
+        <h3><span class="badge">FIRST100</span></h3>
+    </tbody>
+    <tfoot>
+        <img src="cid:unique-delivery.jpg" alt="fast delivery">
+    </tfoot>
+    </tbody>
+</table>
+
+</html>

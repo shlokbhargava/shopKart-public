@@ -1,0 +1,160 @@
+<link rel="stylesheet" href="/css/header.css">
+
+<!-- Header -->
+<header>
+  <nav class="navbar navbar-light fixed-top">
+    <a class="navbar-brand" style="color: floralwhite;" href="/">
+      shopKart
+    </a>
+    <form class="form-inline">
+      <input class="form-control" type="search" style="color: white;" placeholder="Search" required>
+      <button type="button" class="btn"><i class="fas fa-search"></i></button>
+    </form>
+    
+    <% if(locals.user) { %>
+      <a href="/users/profile/<%= user.id %>" class="btn btn-light active user-name" role="button" aria-pressed="true"><%= user.firstName %></a>
+      <a href="/users/logout" role="button" type="button" class="logout btn btn-outline-light">
+        Logout
+      </a>
+    <% } else { %>
+      <button type="button" class="btn btn-outline-light login-btn" data-toggle="modal" data-target="#loginModal">
+        Login
+      </button>
+      <button type="button" class="btn btn-outline-light signup-btn" data-toggle="modal" data-target="#signUpModal">
+        SignUp
+      </button>
+    <% } %>
+
+    <i class="fas fa-shopping-cart"> <span> Cart</span></i>
+  </nav>
+
+  <br>
+  <br>
+  <br>
+
+  <div class="btn-group fixed-top second-nav">
+    <button type="button" class="btn btn-danger dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+      Action
+    </button>
+    <div class="dropdown-menu">
+      <a class="dropdown-item" href="#">Action</a>
+      <a class="dropdown-item" href="#">Another action</a>
+      <a class="dropdown-item" href="#">Something else here</a>
+      <div class="dropdown-divider"></div>
+      <a class="dropdown-item" href="#">Separated link</a>
+    </div>
+  </div>
+
+</header>
+
+
+
+<!-- Login Modal -->
+<div id="loginModal" class="modal fade" tabindex="-1" role="dialog">
+  <div class="modal-dialog modal-dialog-centered" role="document">
+      <div class="modal-content">
+          <div class="modal-header">
+              <h4 class="modal-title">Login</h4>
+              <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                  <span aria-hidden="true">&times;</span>
+              </button>
+          </div>
+          <div class="modal-body">
+              <form action="/users/create-session" method="POST">
+                  <div class="form-group">
+                      <label>Enter Email<span class="required">*</span></label>
+                      <input type="email" name="email" class="form-control" required>
+                  </div>
+
+                  <div class="form-group">
+                      <label>Password<span class="required">*</span></label>
+                      <input type="password" name="password" class="form-control" required>
+                  </div>
+                  <button type="submit" class="btn btn-block btn-outline-primary" value="login">Login</button>
+                  <a href="#forgotPasswordModal" data-toggle="modal" data-dismiss="modal" class="btn btn-block btn-outline-primary">Forgot Password</a>
+                  <!-- <span>OR</span> --><!--OTP login-->
+                  <!-- <button type="submit" class="btn btn-block btn-outline-warning">OTP Login</button>  -->
+              </form>
+          </div>  
+          <div class="modal-footer">
+              <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+              <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#signUpModal" data-dismiss="modal">
+                Sign Up
+              </button>
+          </div>        
+      </div>
+  </div>
+</div>
+
+
+<!-- forgot password modal -->
+<div id="forgotPasswordModal" class="modal fade" tabindex="-1" role="dialog">
+  <%- include('_forgot-password') -%>
+</div>
+
+
+
+<!-- Sign Up Modal -->
+<div id="signUpModal" class="modal fade" tabindex="-1" role="dialog">
+  <div class="modal-dialog modal-dialog-centered" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h4 class="modal-title">Sign Up</h4>
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+        <div class="modal-body">
+            <form action="" class="create-account" method="POST">
+
+                <div class="form-row">
+                  <div class="form-group col-sm-6">
+                    <label>Enter First Name<span class="required">*</span></label>
+                    <input type="text" name="firstName" class="form-control" required>
+                  </div>
+                  <div class="form-group col-sm-6">
+                    <label>Enter Last Name</label>
+                    <input type="text" name="lastName" class="form-control">
+                  </div>
+                </div>
+
+                <div class="form-group">   <!--Mail Verification-->
+                  <label>Enter Email<span class="required">*</span></label>
+                  <input type="email" id="email" name="email" class="form-control" required>
+                  <small class="form-text text-muted">Enter a valid email to receive important notifications and otp</small>
+                </div>
+
+                <div class="form-group">
+                  <label>Mobile Number<span class="required">*</span></label> <!--Mobile Verification-->
+                  <input type="tel" name="mobile" class="form-control" pattern="[7-9]{1}[0-9]{9}" required>
+                  <small class="form-text text-muted">Mobile Number will be verified</small>
+                </div>
+
+                <div class="form-group">
+                  <label>Password<span class="required">*</span></label>
+                  <div class="input-group mb-2 mr-sm-2">
+                    <input type="password" id="password" name="password" class="form-control" placeholder="At least 8 characters" required>
+                    <div class="input-group-prepend">
+                      <div class="input-group-text"><i toggle="#password" class="fa fa-fw fa-eye field-icon toggle-password"></i></div>
+                    </div>
+                  </div> 
+                </div>
+
+                <button type="submit" class="btn btn-block btn-outline-primary" id="create-account">Create Account</button>
+            </form>
+        </div> 
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+          <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#loginModal" data-dismiss="modal">
+            Login
+          </button>
+      </div>
+      </div>
+  </div>
+</div>
+
+
+
+<script src="/js/header.js"></script>
+
+

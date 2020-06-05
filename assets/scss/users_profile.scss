@@ -1,0 +1,42 @@
+$font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+$font-size: 18.3px;
+
+
+h3 {
+    font-family: $font-family;
+}
+
+.container {
+    font-family: $font-family;
+
+    .card-body {
+        font-size: $font-size;
+    }
+
+    input, label {
+        font-size: $font-size;
+    }
+
+    .btn {
+        font-size: 19px;
+        text-align: left;
+        text-transform: capitalize;
+    }
+
+    .profile-cards {
+
+        #customer-support {
+
+            ul {
+                color: gray;
+    
+                li {
+                    list-style: none;
+                }
+            }
+        }
+    
+    }
+
+
+}

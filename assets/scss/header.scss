@@ -1,0 +1,61 @@
+$text-color: white;
+$background-color: #516395;
+$font-family: Titillium Web;
+
+header {
+
+    font-family: $font-family;
+    nav{
+        
+        background-color: $background-color;
+
+        i {
+            color: $text-color;
+
+            span {
+                font-family: $font-family;
+                font-size: large;
+            }
+        }
+        
+        .form-inline {
+            margin-left: 10%;
+
+            .form-control {
+                width: 200%;
+            } 
+            
+            button {
+                left: 70%;
+            }
+        }
+
+        .login-btn {
+            left: 25%;
+            margin-top: 0.5%;
+        }
+
+        .signup-btn{
+            left: 12.5%;
+            margin-top: 0.5%;
+        }
+
+        i {
+            font-size: larger;
+        }
+
+        .logout {
+            left: 11%;
+        }
+
+        .user-name {
+            left: 23%;
+        }
+
+    }
+
+}
+
+span {
+    font-size: medium;
+}

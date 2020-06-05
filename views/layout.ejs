@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title> <%= title %> </title>
+   
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- jQuery -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <!-- Material design for Bootstrap -->
+    <link rel="stylesheet" href="https://unpkg.com/bootstrap-material-design@4.1.1/dist/css/bootstrap-material-design.min.css" integrity="sha384-wXznGJNEXNG1NFsbm0ugrLFMQPWswR3lds2VeinahP8N0zJw9VWSopbjv2x7WCvX" crossorigin="anonymous">
+    <!-- Using Noty js -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/noty/3.1.4/noty.min.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/noty/3.1.4/noty.min.js"></script>
+    <!-- Using FontAwesome -->
+    <link rel="stylesheet" href="/font-awesome/css/font-awesome.min.css">
+    <link rel="stylesheet" href="/font-awesome/css/solid.css">
+    <link rel="stylesheet" href="/font-awesome/css/brands.css">
+    <link rel="stylesheet" href="/font-awesome/css/regular.css">
+    <!-- Google Fonts -->
+    <link href='https://fonts.googleapis.com/css?family=Titillium Web' rel='stylesheet'>
+
+    <%- style %>
+    
+</head>
+<body>
+    
+    <%- include('_header') -%>
+
+    <%- body %>
+    
+    <%- include('_footer') -%>
+
+
+    <!-- for noty -->
+    <script>
+        <% if(flash.success && flash.success.length > 0) { %>
+            new Noty({
+                theme: 'bootstrap-v4',
+                text: "<%= flash.success %>",
+                type: 'success',
+                layout: 'topRight',
+                timeout: 1000
+            }).show();
+        <% } %>
+
+        <% if(flash.error && flash.error.length > 0) { %>
+            new Noty({
+                theme: 'bootstrap-v4',
+                text: "<%= flash.error %>",
+                type: 'error',
+                layout: 'topRight',
+                timeout: 1000
+            }).show();
+        <% } %>
+
+        <% if(flash.info && flash.info.length > 0) { %>
+            new Noty({
+                theme: 'bootstrap-v4',
+                text: "<%= flash.info %>",
+                type: 'info',
+                layout: 'topRight',
+                timeout: 1000
+            }).show();
+        <% } %>
+    </script>
+
+
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+    <script src="https://unpkg.com/popper.js@1.12.6/dist/umd/popper.js" integrity="sha384-fA23ZRQ3G/J53mElWqVJEGJzU0sTs+SvzG8fXVWP+kJQ1lwFAOkcUOysnlKJC33U" crossorigin="anonymous"></script>
+    <script src="https://unpkg.com/bootstrap-material-design@4.1.1/dist/js/bootstrap-material-design.js" integrity="sha384-CauSuKpEqAFajSpkdjv3z9t8E7RlpJ1UP0lKM/+NdtSarroVKu069AlsRPKkFBz9" crossorigin="anonymous"></script>
+    <script>$(document).ready(function() { $('body').bootstrapMaterialDesign(); });</script>
+    <%- script %>
+
+</body>
+</html>

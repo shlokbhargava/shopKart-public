@@ -1,0 +1,56 @@
+<!-- Personal Info -->
+<div class="personal-info">
+    <h4 class="card-title">Personal Information</h4>
+    <form action="/users/update/<%= profile_user.id %>" method="POST">
+        <div class="form-row">
+            <div class="form-group col-sm-6">
+                <label>Enter First Name<span class="required">*</span></label>
+                <input type="text" name="firstName" class="form-control" value="<%= profile_user.firstName %>" required>
+            </div>
+            <% if(profile_user.lastName) { %>
+            <div class="form-group col-sm-6">
+                <label>Enter Last Name</label>
+                <input type="text" name="lastName" class="form-control" value="<%= profile_user.lastName %>">
+            </div>
+            <% } else { %>
+            <div class="form-group col-sm-6">
+                <label>Enter Last Name</label>
+                <input type="text" name="lastName" class="form-control">
+            </div>
+            <% } %>
+        </div>
+
+        <div class="form-group">
+            <!--Mail Verification-->
+            <label>Enter Email<span class="required">*</span></label>
+            <input type="email" name="email" class="form-control" value="<%= profile_user.email %>" required>
+            <small class="form-text text-muted">Enter a valid email to receive important notifications and otp</small>
+        </div>
+
+        <div class="form-group">
+            <label>Mobile Number<span class="required">*</span></label>
+            <!--Mobile Verification-->
+            <input type="tel" name="mobile" class="form-control" pattern="[7-9]{1}[0-9]{9}" value="<%= profile_user.mobile %>" required>
+            <small class="form-text text-muted">Mobile Number will be verified</small>
+        </div>
+        <button type="submit" class="btn btn-outline-primary"><i class="fas fa-user-edit"></i> Update</button>
+    </form>
+</div>
+<br>
+<hr>
+
+
+<!-- Reset Password -->
+<div class="reset-password">
+    <%- include('_reset-password') -%>
+</div>
+<br>
+<hr>
+
+
+<!-- Address Info -->
+<div class="address-info">
+    <%- include('_address-info') -%>
+</div>
+
+
