@@ -1,0 +1,10 @@
+.address-info .address-options a {
+  left: 1%; }
+
+.address-info .address-options button:hover {
+  background-color: #3f9688;
+  color: white; }
+
+.address-info li {
+  list-style: none;
+  color: black; }

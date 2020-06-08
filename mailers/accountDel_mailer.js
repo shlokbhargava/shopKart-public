@@ -6,7 +6,7 @@ exports.accountDeleted = (userDetails) => {
     let htmlString = nodeMailer.renderTemplate({ userDetails: userDetails}, '/accountDeleted.ejs');
 
     nodeMailer.transporter.sendMail({
-        from: '"shopKart" ****',
+        from: '"shopKart" *******',
         to: userDetails.email,
         subject: 'Account Deleted',
         html: htmlString,

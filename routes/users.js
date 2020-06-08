@@ -35,5 +35,8 @@ router.post('/delete/:id', passport.checkAuthentication, usersController.delete)
 // For Password reset requests
 router.use('/password', require('./password'));
 
+// For handling user address
+router.use('/address', require('./address'));
+
 
 module.exports = router;

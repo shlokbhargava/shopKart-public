@@ -1,4 +1,5 @@
 const User = require('../models/user');
+const Address = require('../models/user_address');
 const signUpMailer = require('../mailers/signup_mailer');
 const passport = require('passport');
 const queue = require('../config/kue');
@@ -56,9 +57,12 @@ exports.userProfile = async (req, res) => {
     try {
         let user = await User.findById(req.params.id);
 
+        let address = await Address.find({ user: user._id });
+
         return res.render('users_profile', {
             title: "My Profile",
-            profile_user: user
+            profile_user: user,
+            address: address
         });
     } catch (err) {
         console.log('Error in finding user to render profile', err); return;
@@ -106,11 +110,10 @@ exports.delete = async (req, res) => {
 
                 user.remove();
 
-                console.log(userDetails);
+                await Address.deleteMany({user: req.params.id});
 
                 let job = queue.create('accountDeleted', userDetails).save();
 
-    
                 req.flash('info', 'Your account has been deleted');
 
                 req.logout();
