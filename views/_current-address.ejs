@@ -5,112 +5,43 @@
 <div class="col-sm-6 address-info">
     <div class="card mt-4 mb-3 border-primary">
         <div class="card-body">
-          <p class="card-text">
-              <li>
-                  <%= user_address.fName %> &nbsp;
-              </li>
-              <li>
-                  <%= user_address.mNumber %>
-              </li>
-              <li>
-                <%= user_address.fNumber %>
-              </li>
-              <li>
-                <%= user_address.address %>
-              </li>
-              <li>
-                  <%= user_address.city %>,&nbsp;<%= user_address.state %>-<%= user_address.zip %>
-              </li>
-              <li>
-                <%= user_address.country %>
-              </li>
-          </p>
-          <div class="address-options">
-            <form action="/users/address/delete/<%= user_address._id %>" method="post">
-                <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#editAddressModal">
-                    Edit
-                </button>
-                <button type="submit" class="btn btn-primary">Remove</a>
-            </form>
-        </div>
+            <p class="card-text">
+                <li>
+                    <%= user_address.fName %> 
+                    <% if(user_address.lName) { %>
+                        <%= user_address.lName %> 
+                    <% } %>
+                </li>
+                <li>
+                    <%= user_address.mNumber %>
+                    <% if(user_address.altNumber) { %>
+                        , <%= user_address.altNumber %> 
+                    <% } %>
+                </li>
+                <li>
+                    <%= user_address.fNumber %>
+                </li>
+                <li>
+                    <%= user_address.address %> 
+                    <% if(user_address.address2) { %>
+                        <br> <%= user_address.address2 %> 
+                    <% } %>
+                </li>
+                <li>
+                    <%= user_address.city %>,&nbsp;<%= user_address.state %>-<%= user_address.zip %>
+                </li>
+                <li>
+                    <%= user_address.country %>
+                </li>
+            </p>
+            <div class="address-options">
+                <form action="/users/address/edit/<%= user_address._id %>" method="get">
+                    <button type="submit" class="btn btn-primary">Edit</button>
+                </form>
+                <form action="/users/address/delete/<%= user_address._id %>" method="post">
+                    <button type="submit" class="btn btn-primary">Remove</a>
+                </form>
+            </div>
         </div>
     </div>
 </div>
-
-
-<!-- Edit address Modal -->
-<div id="editAddressModal" class="modal fade" tabindex="-1" role="dialog">
-    <div class="modal-dialog modal-dialog-centered" role="document">
-        <div class="modal-content">
-            <div class="modal-header">
-                <h4 class="modal-title">Edit Address</h4>
-                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                    <span aria-hidden="true">&times;</span>
-                </button>
-            </div>
-            <div class="modal-body">
-                <form action="/users/create-session" method="POST">
-                    <div class="form-row">
-                        <div class="form-group col-sm-6">
-                            <label>Enter First Name<span class="required">*</span></label>
-                            <input type="text" name="fName" class="form-control" value="<%= user_address.fName %>" required>
-                        </div>
-                        <div class="form-group col-sm-6">
-                            <label>Enter Last Name</label>
-                            <input type="text" name="lName" value="<%= user_address.lName %>" class="form-control">
-                        </div>
-                    </div>
-                    <div class="form-row">
-                        <div class="form-group col-sm-6">
-                            <label>Mobile Number<span class="required">*</span></label>
-                            <input type="tel" name="mNumber" class="form-control" pattern="[7-9]{1}[0-9]{9}" value="<%= user_address.mNumber %>" required>
-                        </div>
-                        <div class="form-group col-sm-6">
-                            <label>Alternate Mobile Number</label>
-                            <input type="tel" name="altNumber" class="form-control" pattern="[7-9]{1}[0-9]{9}" value="<%= user_address.altNumber %>">
-                        </div>
-                    </div>
-                    <div class="form-row">
-                        <div class="form-group col-sm-2">
-                            <label>Flat Number<span class="required">*</span></label>
-                            <input type="text" name="fNumber" class="form-control" value="<%= user_address.fNumber %>" required>
-                        </div>
-                        <div class="form-group col-sm-10">
-                            <label>Address<span class="required">*</span></label>
-                            <input type="text" class="form-control" name="address" value="<%= user_address.address %>" required>
-                        </div>
-                    </div>
-                    <div class="form-group">
-                        <label>Address 2</label>
-                        <input type="text" class="form-control" name="address2" value="<%= user_address.address2 %>">
-                    </div>
-                    <div class="form-row">
-                        <div class="form-group col-sm-3">
-                            <label>City<span class="required">*</span></label>
-                            <input type="text" class="form-control" name="city" value="<%= user_address.city %>" required>
-                        </div>
-                        <div class="form-group col-sm-3">
-                            <label>State<span class="required">*</span></label>
-                            <input type="text" class="form-control" name="state" value="<%= user_address.state %>" required>
-                        </div>
-                        <div class="form-group col-sm-3">
-                            <label>Country<span class="required">*</span></label>
-                            <input type="text" class="form-control" name="country" value="<%= user_address.country %>" required>
-                        </div>
-                        <div class="form-group col-sm-3">
-                            <label>Zip<span class="required">*</span></label>
-                            <input type="number" class="form-control" name="zip" value="<%= user_address.zip %>" required>
-                        </div>
-                    </div>
-                    <div class="form-group">
-                        <input type="hidden" name="user" value="<%= user._id %>">
-                    </div>
-                </form>
-            </div>  
-            <div class="modal-footer">
-                <button type="submit" class="btn btn-primary">Save</a>
-                <button type="reset" class="btn btn-primary">Clear All</a>    
-            </div>        
-        </div>
-    </div>
-  </div>

@@ -1,3 +1,6 @@
+.address-info .address-options form {
+  display: inline; }
+
 .address-info .address-options a {
   left: 1%; }
 

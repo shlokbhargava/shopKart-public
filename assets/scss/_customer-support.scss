@@ -1,4 +1,9 @@
-.profile-cards { 
+.profile-cards {
+    
+    li {
+        list-style: none;
+        color: rgb(61, 58, 58);
+    }
     
     .btn:hover {
     background-color: #3f9688;

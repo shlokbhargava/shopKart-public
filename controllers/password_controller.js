@@ -4,9 +4,12 @@ const crypto = require('crypto');
 const queue = require('../config/kue');
 const forgotPasswordEmailWorker = require('../workers/forgotPass_email_worker');
 
-exports.resetRequest = (req, res) => {       
+exports.resetRequest = async (req, res) => {       
+    let user = await User.findById(req.params.id);
 
-
+    if(req.body.password == user.password) {
+      //  SEND RESET PASSWORD LINK
+    }
 }
 
 

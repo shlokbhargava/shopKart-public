@@ -1,0 +1,20 @@
+$color: darkblue;
+
+h3 {
+    color: $color;
+}
+.container {
+    .card {
+        outline: 1px solid $color;
+        background-color: rgba(238, 235, 235, 0.089);
+        form {
+            input {
+                color: black;
+            }
+            .btn:hover {
+                background-color: $color;
+                color: white;
+            }   
+        }
+    }
+}

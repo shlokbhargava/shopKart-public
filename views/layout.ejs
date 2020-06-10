@@ -19,6 +19,7 @@
     <link rel="stylesheet" href="/font-awesome/css/regular.css">
     <!-- Google Fonts -->
     <link href='https://fonts.googleapis.com/css?family=Titillium Web' rel='stylesheet'>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.0.0/animate.min.css"/>
 
     <%- style %>
     
@@ -40,7 +41,7 @@
                 text: "<%= flash.success %>",
                 type: 'success',
                 layout: 'topRight',
-                timeout: 1000
+                timeout: 800
             }).show();
         <% } %>
 
@@ -50,7 +51,7 @@
                 text: "<%= flash.error %>",
                 type: 'error',
                 layout: 'topRight',
-                timeout: 1000
+                timeout: 800
             }).show();
         <% } %>
 
@@ -60,7 +61,7 @@
                 text: "<%= flash.info %>",
                 type: 'info',
                 layout: 'topRight',
-                timeout: 1000
+                timeout: 800
             }).show();
         <% } %>
     </script>

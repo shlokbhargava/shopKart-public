@@ -1,3 +1,7 @@
+.profile-cards li {
+  list-style: none;
+  color: #3d3a3a; }
+
 .profile-cards .btn:hover {
   background-color: #3f9688;
   color: white; }
