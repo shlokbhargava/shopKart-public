@@ -4,7 +4,7 @@ exports.forgotPassword = (resetToken) => {
     let htmlString = nodeMailer.renderTemplate({ resetToken: resetToken}, '/forgotPassword.ejs');
 
     nodeMailer.transporter.sendMail({
-        from: '"shopKart" <project.cn20@gmail.com>',
+        from: '"shopKart" <shopcart.com>',
         to: resetToken.user.email,
         subject: 'Forgot Password',
         html: htmlString,

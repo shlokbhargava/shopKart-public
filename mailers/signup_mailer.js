@@ -7,7 +7,7 @@ exports.newUser = (user) => {
     let htmlString = nodeMailer.renderTemplate({user: user}, '/signUp.ejs');
 
     nodeMailer.transporter.sendMail({
-        from: '"shopKart" <project.cn20@gmail.com>',
+        from: '"shopKart" <shopcart.com>',
         to: user.email,
         subject: 'Welcome to shopKart',
         html: htmlString,

@@ -1,0 +1,15 @@
+.carousel {
+  font-family: Titillium Web; }
+  .carousel .card-header {
+    background-color: #f0efef;
+    font-size: larger;
+    color: #3f9688; }
+  .carousel .carousel-inner .carousel-item .card-group .card {
+    background-color: #f0efef; }
+    .carousel .carousel-inner .carousel-item .card-group .card img {
+      margin-left: 25%; }
+    .carousel .carousel-inner .carousel-item .card-group .card .card-body .card-link {
+      font-size: medium; }
+    .carousel .carousel-inner .carousel-item .card-group .card .card-body .card-title {
+      font-weight: bold;
+      text-align: center; }

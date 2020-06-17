@@ -1,4 +1,6 @@
 const express = require('express');
+const env = require('./config/environment');
+const logger = require('morgan');
 const app = express();
 const expressLayouts = require('express-ejs-layouts');
 const sassMiddleware = require('node-sass-middleware');
@@ -13,15 +15,17 @@ const passportLocal = require('./config/passport-local-strategy');
 const session = require('express-session');
 const MongoStore = require('connect-mongo')(session);
 const bodyParser = require('body-parser');
+const path = require('path');
 
 
-app.use(sassMiddleware({
-    src: './assets/scss',
-    dest: './assets/css',
-    debug: true,
-    outputStyle: 'extended',
-    prefix: '/css'
-}));
+// if(env.name == 'development') {
+    app.use(sassMiddleware({
+        src: path.join(__dirname, env.asset_path, 'scss'),
+        dest: path.join(__dirname, env.asset_path, 'css'),
+        debug: true,
+        outputStyle: 'extended',
+        prefix: '/css'
+    }));   
 
 
 app.use(express.urlencoded());
@@ -30,7 +34,7 @@ app.use(cookieParser());
 
 
 // assets
-app.use(express.static('./assets'));
+app.use(express.static(env.asset_path));
 
 // extract styles and scripts from sub pages into layout
 app.set('layout extractStyles', true);
@@ -46,7 +50,7 @@ app.set('views', './views');
 // mongo store is used to store the session cookie in the db
 app.use(session({
     name: 'shopkart',
-    secret: 'anything',
+    secret: env.session_cookie_key,
     saveUninitialized: false,
     resave: false,
     cookie: {

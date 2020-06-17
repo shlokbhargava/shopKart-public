@@ -1,6 +1,7 @@
 const mongoose = require('mongoose');
+const env = require('./environment');
 
-mongoose.connect('mongodb://localhost/shopkart_development');
+mongoose.connect(`mongodb://localhost/${env.db}`);
 
 // acquire the connection (to check if it is successful)
 const db = mongoose.connection;
