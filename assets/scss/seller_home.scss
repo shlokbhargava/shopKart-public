@@ -1,0 +1,53 @@
+$background-color: #516395;
+$font-family: Titillium Web;
+
+
+.nav {
+    margin-top: -0.3%;
+    padding: 15px;
+    background-color: $background-color;
+    font-family: $font-family;
+
+    .nav-item {
+        left: 6%;
+        
+        a {
+            color: white;
+        }
+
+        a:hover, .active {
+            color: rgb(233, 221, 197);
+            border-bottom: solid 1px rgb(233, 221, 197);
+        }
+
+    }
+
+
+    .logout {
+        left: 18%;
+    }
+
+    .user-name {
+        left: 17%;
+    }
+}
+
+
+.container {
+
+    .row {
+        height: 600px;
+    }
+    #Personal-Information {
+        background-color: rgb(174, 174, 226);
+    }
+    #Current-Orders {
+        background-color: grey;
+    }   
+    #Sell-Product {
+        background-color: lightgray;
+    }
+    #Selling-History {
+        background-color: grey;
+    }
+}

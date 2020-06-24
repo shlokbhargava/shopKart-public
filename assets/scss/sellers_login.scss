@@ -1,0 +1,73 @@
+$border: solid 1px #516395;
+$background-color: rgb(250, 249, 246);
+$color1: darkblue;
+
+
+header {
+    .nav {
+        .login-btn {
+            left: 48%;
+            margin-top: 0.5%;
+        }
+    
+        .signup-btn{
+            left: 24%;
+            margin-top: 0.5%;
+        } 
+    }       
+}
+
+
+body {
+    background-color: white;
+    color: $color1;
+}
+
+.box {
+    border: $border;
+
+    .header {
+        border: $border;
+        height: 65px;
+
+        a:hover {
+            cursor: pointer;   
+        }
+    }
+
+    .body {
+        background-color: $background-color;
+        min-height: 300px;
+        height: auto;
+
+        form {
+            input {
+                color: black;
+            }
+
+            .btn {
+                left: 40%;
+                outline: $border;
+                color: $color1;
+            }
+
+            .btn:hover {
+                background-color: $color1;
+                color: white;
+            }   
+        }
+
+    }
+    
+    .footer-login {
+        background-color: $background-color;
+
+        a {
+            color: $color1;
+        }
+        a:hover {
+            color: blue;
+        }
+    }
+
+}

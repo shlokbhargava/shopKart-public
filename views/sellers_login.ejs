@@ -1,0 +1,94 @@
+<link rel="stylesheet" href="/css/sellers_login.css">
+
+
+<header>
+    <nav class="navbar navbar-light fixed-top">
+      <a class="navbar-brand" style="color: floralwhite;" href="/">
+        shopKart
+      </a>
+      <form class="form-inline">
+        <input class="form-control" type="search" style="color: white;" placeholder="Search" required>
+        <button type="button" class="btn"><i class="fas fa-search"></i></button>
+      </form>
+      
+      <button type="button" class="btn btn-outline-light login-btn">
+        <i class="fas fa-sign-in-alt"></i> Login
+      </button>
+      <button type="button" class="btn btn-outline-light signup-btn">
+        <i class="fas fa-user-plus"></i> SignUp
+      </button>
+    </nav>
+</header>
+
+<h4 class="text-center mt-5">Sellers Login</h4>
+
+
+
+<div class="col-12 col-sm-4 offset-4 mt-5 mb-5 box">
+    <div class="row header">
+        <div class="col-6 login-header">
+            <a id="login-link">
+                <h5 class="text-center mt-3">Login</h5>
+            </a>
+        </div>
+        <div class="col-6 signup-header">
+            <a id="signup-link">
+                <h5 class="text-center mt-3">Sign Up</h5>
+            </a>
+        </div>
+    </div>
+    <div class="row body">
+        <div class="col-12 mt-5">
+            <!-- Login form -->
+            <form action="/sellers/create-session" id="login-form" method="POST">
+                <div class="form-group">
+                    <label>Enter Email<span class="required">*</span></label>
+                    <input type="email" name="email" class="form-control" required>
+                </div>
+                <div class="form-group">
+                    <label>Password<span class="required">*</span></label>
+                    <input type="password" name="password" class="form-control" required>
+                </div>
+                <button class="btn mt-4" type="submit">Login</button>
+            </form>
+
+            <!-- Sign Up Form -->
+            <form action="" method="post" id="signUpform">
+                <div class="form-group">
+                    <label>Enter First Name<span class="required">*</span></label>
+                    <input type="text" name="firstName" class="form-control" required>
+                </div>
+                <div class="form-group">
+                    <label>Enter Last Name</label>
+                    <input type="text" name="lastName" class="form-control">
+                </div>
+                <div class="form-group">
+                    <!-- Mail Verification -->
+                    <label>Enter Email<span class="required">*</span></label>
+                    <input type="email" name="email" class="form-control" required>
+                </div>
+                <div class="form-group">
+                    <label>Mobile Number<span class="required">*</span></label>
+                    <!--Mobile Verification -->
+                    <input type="tel" name="mobile" class="form-control" pattern="[7-9]{1}[0-9]{9}" required>
+                    <small class="form-text text-muted">Mobile Number will be verified</small>
+                </div>
+                <div class="form-group">
+                    <label>Password<span class="required">*</span></label>
+                    <div class="input-group mb-2 mr-sm-2">
+                        <input type="password" id="password-1" name="password" class="form-control" placeholder="At least 8 characters" required>
+                    </div>
+                </div>
+                <button class="btn mt-4" id="create-seller" type="submit">Sign Up</button>
+            </form>
+        </div>
+    </div>
+    <div class="row footer-login">
+        <a class="dropdown-item text-center" id="signUP">New around here? Sign up</a>
+        <a class="dropdown-item text-center" href="/users/ask-password-reset">Forgot password?</a>
+    </div>
+</div>
+
+
+
+<script src="/js/sellers_login.js"></script>

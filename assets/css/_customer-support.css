@@ -5,3 +5,46 @@
 .profile-cards .btn:hover {
   background-color: #3f9688;
   color: white; }
+
+.profile-cards .collapse .card {
+  border: #263252 solid 1.6px;
+  border-bottom: #263252 solid 0.8px;
+  background-color: rgba(235, 230, 230, 0.192);
+  height: 500px; }
+  .profile-cards .collapse .card .card-header {
+    color: #263252; }
+  .profile-cards .collapse .card .card-body {
+    border: #263252 solid 0.8px;
+    border-top: #263252 solid 1.6px;
+    overflow-y: auto; }
+    .profile-cards .collapse .card .card-body .chat-message {
+      margin-top: auto;
+      margin-bottom: auto;
+      margin-left: 10px;
+      border: #516395 solid 1px;
+      color: #516395;
+      padding: 8px;
+      position: relative; }
+    .profile-cards .collapse .card .card-body .float-left {
+      border-radius: 25px 25px 25px 0px; }
+      .profile-cards .collapse .card .card-body .float-left .msg-time {
+        position: absolute;
+        left: 0;
+        bottom: -17px;
+        color: #263252;
+        font-size: 13px; }
+    .profile-cards .collapse .card .card-body .float-right {
+      border-radius: 25px 25px 0px 25px; }
+      .profile-cards .collapse .card .card-body .float-right .msg-time-send {
+        position: absolute;
+        right: 0;
+        bottom: -17px;
+        color: #263252;
+        font-size: 13px; }
+  .profile-cards .collapse .card .card-footer {
+    border: #263252 solid 0.8px; }
+    .profile-cards .collapse .card .card-footer .btn {
+      color: #516395; }
+    .profile-cards .collapse .card .card-footer .btn:hover {
+      color: white;
+      background-color: #516395; }

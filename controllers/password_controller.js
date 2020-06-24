@@ -4,43 +4,71 @@ const crypto = require('crypto');
 const queue = require('../config/kue');
 const forgotPasswordEmailWorker = require('../workers/forgotPass_email_worker');
 
-exports.resetRequest = async (req, res) => {       
-    let user = await User.findById(req.params.id);
+exports.resetRequest = async (req, res) => {
+   try {
 
-    if(req.body.password == user.password) {
-      //  SEND RESET PASSWORD LINK
-    }
+      let user = await User.findById(req.body.user_id);
+
+      if (req.body.password == user.password) {
+         let resetToken = await resetPassword.create({
+            user: user,
+            accessToken: crypto.randomBytes(20).toString('hex'),
+            isValid: true
+         });
+   
+         if (resetToken) {
+   
+            queue.create('forgotPassword', resetToken).save();
+   
+            req.flash('success', 'Reset Password link sent successfully');
+            req.logout();
+            return res.redirect('/');
+   
+         } else {
+   
+            console.log('accessToken not generated', err);
+            req.flash('error', 'Try again');
+            return;
+         }
+      } else {
+         req.flash('error', 'Incorrect Password');
+         return res.redirect('back');
+      }
+   } catch (err) {
+      console.log('error in generating password resetRequest', err);
+      return;
+   }
 }
 
 
 // Forgot Password Request
 exports.forgotPassword = async (req, res) => {
-    let user = await User.findOne({ email: req.body.email });
-    
-    if (user) {
-       let resetToken = await resetPassword.create({
-          user: user, 
-          accessToken: crypto.randomBytes(20).toString('hex'),
-          isValid: true
-       });
-       
-       if (resetToken) {
+   let user = await User.findOne({ email: req.body.email });
+
+   if (user) {
+      let resetToken = await resetPassword.create({
+         user: user,
+         accessToken: crypto.randomBytes(20).toString('hex'),
+         isValid: true
+      });
+
+      if (resetToken) {
 
          queue.create('forgotPassword', resetToken).save();
 
          req.flash('success', 'Reset Password link sent successfully');
          return res.redirect('back');
 
-       } else {
+      } else {
 
          console.log('accessToken not generated', err);
          req.flash('error', 'Try again');
          return;
-       }
-    } else {
+      }
+   } else {
       req.flash('error', 'The entered email id is not registered');
       return res.redirect('back');
-    }
+   }
 }
 
 
@@ -63,14 +91,14 @@ exports.createPassPage = async (req, res) => {
 // Creating New Password For the user
 exports.createNewPassword = async (req, res) => {
    try {
-      if(req.body.new_password != req.body.confirm_new_password){
-          return res.redirect('back');
+      if (req.body.new_password != req.body.confirm_new_password) {
+         return res.redirect('back');
       }
 
-      let resetToken = await resetPassword.findById(req.params.id);
-      
-      if(resetToken) {
-         if(resetToken.isValid) {
+      let resetToken = await resetPassword.findById(req.body.token_id);
+
+      if (resetToken) {
+         if (resetToken.isValid) {
             let user = await User.findById(resetToken.user);
 
             user.password = req.body.new_password;
@@ -85,10 +113,10 @@ exports.createNewPassword = async (req, res) => {
             return res.redirect('back');
          }
       }
-      
-   }catch(error) {
+
+   } catch (error) {
       console.log('error in setting new password', error);
       return;
-   }   
+   }
 
 }

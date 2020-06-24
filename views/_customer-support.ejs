@@ -21,7 +21,77 @@
 
         <!-- MAKE A CHAT SECTION -->
         <li>CHAT WITH US : &nbsp;
-            <button type="submit" class="btn btn-outline-primary"> <i class="far fa-comment-dots"></i> &nbsp;Start a Chat</button>
+            <button type="button" data-toggle="collapse" data-target="#chat-box" aria-expanded="false" aria-controls="collapseExample" class="btn btn-outline-primary"> <i class="far fa-comment-dots"></i> &nbsp;Start a Chat</button>
         </li>
+
+        <div class="collapse" id="chat-box">
+            <div class="card">
+                <div class="card-header text-center">
+                    <i class="fas fa-circle"> Online</i>
+                </div>
+                <div class="card-body">
+                    <div class="float-left chat-message">
+                        Hi <%= profile_user.firstName %>, How can I help you?
+                        <span class="msg-time">9:12 AM, Today</span>
+                    </div>
+                    <br>
+                    <br>
+                    <br>
+                    <div class="float-right chat-message">
+                        Nothing can be done
+                        <span class="msg-time-send">9:12 AM, Today</span>
+                    </div>
+                    <br>
+                    <br>
+                    <br>
+                    <div class="float-left chat-message">
+                        Hi <%= profile_user.firstName%>, How can I help you?
+                        <span class="msg-time">9:12 AM, Today</span>
+                    </div>
+                    <br>
+                    <br>
+                    <br>
+                    <div class="float-right chat-message">
+                        Nothing can be done
+                        <span class="msg-time-send">9:12 AM, Today</span>
+                    </div>
+                    <br>
+                    <br>
+                    <br>
+                    <div class="float-right chat-message">
+                        Nothing can be done
+                        <span class="msg-time-send">9:12 AM, Today</span>
+                    </div>
+                    <br>
+                    <br>
+                    <br>
+                    <div class="float-left chat-message">
+                        Hi <%= profile_user.firstName %>, How can I help you?
+                        <span class="msg-time">9:12 AM, Today</span>
+                    </div>
+                    <br>
+                    <br>
+                    <br>
+                    <div class="float-left chat-message">
+                        Hi <%= profile_user.firstName %>, How can I help you?
+                        <span class="msg-time">9:12 AM, Today</span>
+                    </div>  
+                    <br>
+                    <br>
+                    <div class="float-right chat-message">
+                        Nothing can be done
+                        <span class="msg-time-send">9:12 AM, Today</span>
+                    </div>
+                </div>
+                <div class="card-footer">
+                    <input type="text" class="w-75" placeholder="Enter Your Message....">
+                    <button class="btn"><i class="fas fa-paperclip"></i></button>
+                    <button class="btn"><i class="far fa-paper-plane"></i></button>
+                </div>
+            </div>
+          </div>
+
+
+
     
 </div>

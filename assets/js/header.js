@@ -22,6 +22,6 @@ $('#create-account').click(() => {
   else{
     $('.create-account').attr('action', '/users/create-account');
   }
-})
+});
 
 

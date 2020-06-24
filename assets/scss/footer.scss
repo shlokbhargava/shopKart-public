@@ -30,96 +30,108 @@ $font-family: Titillium Web;
 
 
 footer {
-    width: 100%;
-    height: 22vh;
     background-image: $background-image;
     color: $text-color;
-    display: flex;
-    flex-direction: row;
-    flex-wrap: nowrap;
-    font-size: 15px;
-    font-family: $font-family;
+
+    .footer {
+        width: 100%;
+        height: 22vh;
+        display: flex;
+        flex-direction: row;
+        flex-wrap: nowrap;
+        font-size: 15px;
+        font-family: $font-family;
+        
+        // background-image: url("/images/delivery.jpg");
     
-    // background-image: url("/images/delivery.jpg");
-
-    ul {
-
-        margin: 30px;
-        font-size: large;
-
-        li {
-            list-style: none;
-            padding-top: 5px;
-            padding-bottom: 5px;
-            font-size: medium;
-            
-            a {
-                color: $text-color;
-            }
-
-            .btn {
-                background-image: $background-image;
-                border: solid $border-color 2px;
+        ul {
+    
+            margin: 30px;
+            font-size: large;
+    
+            li {
+                list-style: none;
+                padding-top: 5px;
+                padding-bottom: 5px;
                 font-size: medium;
-
-                i {
+                
+                a {
                     color: $text-color;
                 }
     
+                .btn {
+                    background-image: $background-image;
+                    border: solid $border-color 2px;
+                    font-size: medium;
+    
+                    i {
+                        color: $text-color;
+                    }
+        
+                }
+    
             }
-
         }
+    
+        .footer-image {
+            z-index: 2;
+            width: 270px;
+            height: 200px;
+            // opacity: 0.6;
+            margin-top: 0.8%;
+            animation: movingCar 4s 1 linear;
+        }
+    
+        // .delivery {
+        //     z-index: 1;
+    
+        //     margin-top: 2%;
+    
+        //     .fast-icon {
+        //         margin-top: -20%;
+        //         width: 150px;
+        //         height: 150px;
+        //     }
+    
+        //     li {
+        //         color: black;
+        //         list-style: none;  
+        //         display: inline-block;
+        //         padding-right: 50px;
+    
+        //         p {
+        //             font-size: medium;
+        //         }
+    
+        //     }
+    
+        //     #li-1 {
+        //         animation: loadingIcon 2s 1 ease-out;
+        //     }
+    
+        //     #li-2 {
+        //         animation: loadingIcon 2s 2s 1 ease-out;
+        //     }
+    
+        //     #li-3 {
+        //         animation: loadingIcon 2s 4s 1 ease-out;
+        //     }
+    
+        //     #li-4 {
+        //         animation: loadingIcon 2s 6s 1 ease-out;
+        //     }
+        // }
+    
     }
 
-    .footer-image {
-        z-index: 2;
-        width: 270px;
-        height: 200px;
-        // opacity: 0.6;
-        margin-top: 0.8%;
-        animation: movingCar 4s 1 linear;
-    }
+    .float-right {
 
-    .delivery {
-        z-index: 1;
-
-        margin-top: 2%;
-
-        .fast-icon {
-            margin-top: -20%;
-            width: 150px;
-            height: 150px;
-        }
-
-        li {
+        .btn:hover {
+            background-color: white;
+            outline: black solid 2px;
             color: black;
-            list-style: none;  
-            display: inline-block;
-            padding-right: 50px;
-
-            p {
-                font-size: medium;
-            }
-
-        }
-
-        #li-1 {
-            animation: loadingIcon 2s 1 ease-out;
-        }
-
-        #li-2 {
-            animation: loadingIcon 2s 2s 1 ease-out;
-        }
-
-        #li-3 {
-            animation: loadingIcon 2s 4s 1 ease-out;
-        }
-
-        #li-4 {
-            animation: loadingIcon 2s 6s 1 ease-out;
         }
     }
-
 }
 
 .last-section {

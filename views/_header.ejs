@@ -2,7 +2,7 @@
 
 <!-- Header -->
 <header>
-  <nav class="navbar navbar-light fixed-top">
+  <nav class="navbar navbar-light main header fixed-top">
     <a class="navbar-brand" style="color: floralwhite;" href="/">
       shopKart
     </a>
@@ -12,20 +12,20 @@
     </form>
     
     <% if(locals.user) { %>
-      <a href="/users/profile/<%= user.id %>" class="btn btn-light active user-name" role="button" aria-pressed="true"><%= user.firstName %></a>
+      <a href="/users/profile/<%= user.id %>" class="btn btn-light active user-name" role="button" aria-pressed="true"><i class="fas fa-user"></i> <%= user.firstName %></a>
       <a href="/users/logout" role="button" type="button" class="logout btn btn-outline-light">
-        Logout
+        <i class="fas fa-sign-out-alt"></i> Logout
       </a>
+      <a href="/users/cart/<%= user.id %>"><i class="fas fa-shopping-cart"> <span> Cart</span></i></a>
     <% } else { %>
       <button type="button" class="btn btn-outline-light login-btn" data-toggle="modal" data-target="#loginModal">
-        Login
+        <i class="fas fa-sign-in-alt"></i> Login
       </button>
       <button type="button" class="btn btn-outline-light signup-btn" data-toggle="modal" data-target="#signUpModal">
-        SignUp
+        <i class="fas fa-user-plus"></i> SignUp
       </button>
+      <a href=""><i class="fas fa-shopping-cart"> <span> Cart</span></i></a>
     <% } %>
-
-    <i class="fas fa-shopping-cart"> <span> Cart</span></i>
   </nav>
 
   <br>
@@ -63,14 +63,14 @@
               <form action="/users/create-session" method="POST">
                   <div class="form-group">
                       <label>Enter Email<span class="required">*</span></label>
-                      <input type="email" name="email" class="form-control" required>
+                      <input type="email" name="email" class="form-control email" required>
                   </div>
 
                   <div class="form-group">
                       <label>Password<span class="required">*</span></label>
                       <input type="password" name="password" class="form-control" required>
                   </div>
-                  <button type="submit" class="btn btn-block btn-outline-primary" value="login">Login</button>
+                  <button type="submit" class="btn btn-block btn-outline-primary login-button" value="login">Login</button>
                   <a href="#forgotPasswordModal" data-toggle="modal" data-dismiss="modal" class="btn btn-block btn-outline-primary">Forgot Password</a>
                   <!-- <span>OR</span> --><!--OTP login-->
                   <!-- <button type="submit" class="btn btn-block btn-outline-warning">OTP Login</button>  -->
@@ -139,7 +139,7 @@
                     </div>
                   </div> 
                 </div>
-
+                
                 <button type="submit" class="btn btn-block btn-outline-primary" id="create-account">Create Account</button>
             </form>
         </div> 

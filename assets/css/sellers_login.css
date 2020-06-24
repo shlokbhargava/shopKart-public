@@ -1,0 +1,38 @@
+header .nav .login-btn {
+  left: 48%;
+  margin-top: 0.5%; }
+
+header .nav .signup-btn {
+  left: 24%;
+  margin-top: 0.5%; }
+
+body {
+  background-color: white;
+  color: darkblue; }
+
+.box {
+  border: solid 1px #516395; }
+  .box .header {
+    border: solid 1px #516395;
+    height: 65px; }
+    .box .header a:hover {
+      cursor: pointer; }
+  .box .body {
+    background-color: #faf9f6;
+    min-height: 300px;
+    height: auto; }
+    .box .body form input {
+      color: black; }
+    .box .body form .btn {
+      left: 40%;
+      outline: solid 1px #516395;
+      color: darkblue; }
+    .box .body form .btn:hover {
+      background-color: darkblue;
+      color: white; }
+  .box .footer-login {
+    background-color: #faf9f6; }
+    .box .footer-login a {
+      color: darkblue; }
+    .box .footer-login a:hover {
+      color: blue; }

@@ -1,0 +1,31 @@
+.nav {
+  margin-top: -0.3%;
+  padding: 15px;
+  background-color: #516395;
+  font-family: Titillium Web; }
+  .nav .nav-item {
+    left: 6%; }
+    .nav .nav-item a {
+      color: white; }
+    .nav .nav-item a:hover, .nav .nav-item .active {
+      color: #e9ddc5;
+      border-bottom: solid 1px #e9ddc5; }
+  .nav .logout {
+    left: 18%; }
+  .nav .user-name {
+    left: 17%; }
+
+.container .row {
+  height: 600px; }
+
+.container #Personal-Information {
+  background-color: #aeaee2; }
+
+.container #Current-Orders {
+  background-color: grey; }
+
+.container #Sell-Product {
+  background-color: lightgray; }
+
+.container #Selling-History {
+  background-color: grey; }

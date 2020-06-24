@@ -6,6 +6,7 @@ const queue = require('../config/kue');
 const signUpEmailWorker = require('../workers/signUp_email_worker');
 const profileUpdEmailWorker = require('../workers/profileUpd_email_worker');
 const accountDelEmailWorker = require('../workers/accountDel_email_worker');
+const paymentIntent = require('../config/stripe');
 
 
 // get the sign up data
@@ -25,7 +26,7 @@ exports.create = async (req, res) => {
             let job = queue.create('newUser', user).save();
 
             return res.render('home', {
-                title: 'Home',
+                title: 'shopKart | Home',
                 user: user
             });
         });
@@ -65,7 +66,8 @@ exports.userProfile = async (req, res) => {
             address: address
         });
     } catch (err) {
-        console.log('Error in finding user to render profile', err); return;
+        console.log('Error in finding user to render profile', err); 
+        return res.redirect('back');
     }
 }
 
@@ -93,6 +95,24 @@ exports.updateUser = async (req, res) => {
     } catch (err) {
         console.log('Error in updating user profile', err); return;
     }
+}
+
+
+//  Users cart
+exports.userCart = async (req, res) => {
+
+    let user = await User.findById(req.params.id);
+
+    return res.render('user_cart', {
+        user: user,
+        title: 'shopKart | Cart'
+    });
+}
+
+
+// Accepting Payments
+exports.session = async (req, res) => {
+
 }
 
 

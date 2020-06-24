@@ -1,0 +1,62 @@
+<link rel="stylesheet" href="/css/seller_home.css">
+
+
+<header>
+    <ul class="nav justify-content-center mb-5 fixed-top">
+        <li class="nav-item">
+            <a class="nav-link active" href="#Personal-Information">Personal Information</a>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link" href="#Current-Orders">Current Orders</a>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link" href="#Sell-Product">Sell Product</a>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link" href="#Selling-History">Selling History</a>
+        </li>
+        <% if(locals.user) { %>
+            <a class="btn btn-light active user-name ml-5" role="button" aria-pressed="true"><i class="fas fa-user"></i> <%= user.firstName %></a>
+            <a href="/sellers/logout" role="button" type="button" class="logout btn btn-outline-light">
+                <i class="fas fa-sign-out-alt"></i> Logout
+            </a>
+        <% } %>
+    </ul>
+</header>
+
+
+<div class="container mt-3">
+    <div class="row" id="Personal-Information">
+        <div class="mt-4">
+            <h4 class="mt-5">Personal Information</h4>
+        </div>
+    </div>
+    <div class="row" id="Current-Orders">
+        <div class="mt-4">
+            <h4 class="mt-5">Current Orders</h4>
+        </div>
+    </div>
+    <div class="row" id="Sell-Product">
+        <div class="mt-4">
+            <h4 class="mt-5">Sell Product</h4>
+        </div>
+    </div>
+    <div class="row mb-5" id="Selling-History">
+        <div class="mt-4">
+            <h4 class="mt-5">Selling History</h4>
+        </div>
+    </div>
+</div>
+
+
+
+
+<script>
+    $('.navbar, .second-nav').hide();
+    $(document).ready(function(){
+        $('ul li a').click(function(){
+            $('li a').removeClass("active");
+            $(this).addClass("active");
+        });
+    });
+</script>

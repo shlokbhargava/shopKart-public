@@ -8,26 +8,32 @@ exports.newAddress = async (req, res) => {
         let user = await User.findById(req.body.user);
 
         if(user) {
-            let address = await Address.create({
-                user: req.user._id,
-                fName: req.body.fName,
-                lName: req.body.lName,
-                mNumber: req.body.mNumber,
-                altNumber: req.body.altNumber,
-                fNumber: req.body.fNumber,
-                address: req.body.address,
-                address2: req.body.address2,
-                city: req.body.city,
-                state: req.body.state,
-                country: req.body.country,
-                zip: req.body.zip
-            });
 
-            user.address.push(address);
-            user.save();
-
-            req.flash('success', 'New Address Added');
-            return res.redirect('back');
+            if (req.body.mNumber == req.body.altNumber) {
+                req.flash('error', 'Please provide different alternate number');
+                return res.redirect('back');
+            }else{
+                let address = await Address.create({
+                    user: req.user._id,
+                    fName: req.body.fName,
+                    lName: req.body.lName,
+                    mNumber: req.body.mNumber,
+                    altNumber: req.body.altNumber,
+                    fNumber: req.body.fNumber,
+                    address: req.body.address,
+                    address2: req.body.address2,
+                    city: req.body.city,
+                    state: req.body.state,
+                    country: req.body.country,
+                    zip: req.body.zip
+                });
+    
+                user.address.push(address);
+                user.save();
+    
+                req.flash('success', 'New Address Added');
+                return res.redirect('back');
+            }
         }
 
     } catch (error) {
@@ -61,9 +67,10 @@ exports.saveAddress = async (req, res) => {
     try {
         let address = await Address.findById(req.params.id);
 
-        let user = await User.findById(address.user);
-
-        if(address) {
+        if (req.body.mNumber == req.body.altNumber) {
+            req.flash('error', 'Please provide different alternate number');
+            return res.redirect('back');
+        }else if(address) {
             address.fName = req.body.fName;
             address.lName = req.body.lName;
             address.mNumber = req.body.mNumber;
@@ -81,6 +88,8 @@ exports.saveAddress = async (req, res) => {
             req.flash('success', 'Address has been saved');
             return res.redirect('back');
         }
+
+
     } catch (error) {
         console.log('error in updating address', error);
         req.flash('error', 'Address could not be updated');

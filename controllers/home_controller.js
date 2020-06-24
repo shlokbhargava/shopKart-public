@@ -1,5 +1,5 @@
 module.exports.homePage = (req,res) => {
     return res.render('home', {
-        title: "Home"
+        title: "shopKart | Home"
     });     
 }

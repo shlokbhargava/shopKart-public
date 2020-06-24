@@ -2,7 +2,7 @@
 const development = {
     name: 'development',
     asset_path: './assets',
-    session_cookie_key: 'anything',
+    session_cookie_key: '***********',
     db: 'shopkart_development',
     smtp: {
         service: 'gmail',
@@ -10,8 +10,8 @@ const development = {
         port: 587,
         secure: false, 
         auth: {
-          user: "***********", 
-          pass: "************", 
+          user: "***************", 
+          pass: "*************", 
         },
       }
 }
@@ -30,8 +30,8 @@ module.exports = development;
 //         port: 587,
 //         secure: false, 
 //         auth: {
-//           user: process.env., 
-//           pass: process.env., 
+//           user: process.env.SHOPKART_SMTP_AUTH_USER, 
+//           pass: process.env.SHOPKART_SMTP_AUTH_PASSWORD, 
 //         },
 //       }
 // }

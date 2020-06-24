@@ -11,59 +11,42 @@
     transform: scale(1); } }
 
 footer {
-  width: 100%;
-  height: 22vh;
   background-image: linear-gradient(50deg, #2857a4 0%, #403066 74%);
-  color: floralwhite;
-  display: flex;
-  flex-direction: row;
-  flex-wrap: nowrap;
-  font-size: 15px;
-  font-family: Titillium Web; }
-  footer ul {
-    margin: 30px;
-    font-size: large; }
-    footer ul li {
-      list-style: none;
-      padding-top: 5px;
-      padding-bottom: 5px;
-      font-size: medium; }
-      footer ul li a {
-        color: floralwhite; }
-      footer ul li .btn {
-        background-image: linear-gradient(50deg, #2857a4 0%, #403066 74%);
-        border: solid #2a5f5f 2px;
+  color: floralwhite; }
+  footer .footer {
+    width: 100%;
+    height: 22vh;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    font-size: 15px;
+    font-family: Titillium Web; }
+    footer .footer ul {
+      margin: 30px;
+      font-size: large; }
+      footer .footer ul li {
+        list-style: none;
+        padding-top: 5px;
+        padding-bottom: 5px;
         font-size: medium; }
-        footer ul li .btn i {
+        footer .footer ul li a {
           color: floralwhite; }
-  footer .footer-image {
-    z-index: 2;
-    width: 270px;
-    height: 200px;
-    margin-top: 0.8%;
-    animation: movingCar 4s 1 linear; }
-  footer .delivery {
-    z-index: 1;
-    margin-top: 2%; }
-    footer .delivery .fast-icon {
-      margin-top: -20%;
-      width: 150px;
-      height: 150px; }
-    footer .delivery li {
-      color: black;
-      list-style: none;
-      display: inline-block;
-      padding-right: 50px; }
-      footer .delivery li p {
-        font-size: medium; }
-    footer .delivery #li-1 {
-      animation: loadingIcon 2s 1 ease-out; }
-    footer .delivery #li-2 {
-      animation: loadingIcon 2s 2s 1 ease-out; }
-    footer .delivery #li-3 {
-      animation: loadingIcon 2s 4s 1 ease-out; }
-    footer .delivery #li-4 {
-      animation: loadingIcon 2s 6s 1 ease-out; }
+        footer .footer ul li .btn {
+          background-image: linear-gradient(50deg, #2857a4 0%, #403066 74%);
+          border: solid #2a5f5f 2px;
+          font-size: medium; }
+          footer .footer ul li .btn i {
+            color: floralwhite; }
+    footer .footer .footer-image {
+      z-index: 2;
+      width: 270px;
+      height: 200px;
+      margin-top: 0.8%;
+      animation: movingCar 4s 1 linear; }
+  footer .float-right .btn:hover {
+    background-color: white;
+    outline: black solid 2px;
+    color: black; }
 
 .last-section {
   height: 10vh;

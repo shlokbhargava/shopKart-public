@@ -1,27 +1,28 @@
 <link rel="stylesheet" href="/css/footer.css">
 
-<footer>
-    <ul>Contact Support
-        <li><i class="fas fa-phone-alt"></i>&nbsp; 123456789</li>
-        <li><i class="far fa-envelope"></i><a href="mailto:support@shopkart.com">&nbsp; support@shopkart.com</a></li>
-    </ul>
-    <ul>Social
-        <li>
-            <button type="button" class="btn bmd-btn-fab bmd-btn-fab-sm">
-                <a href="https://www.facebook.com" target="_blank"><i class="fab fa-facebook-f"></i></a>
-            </button>
-            <button type="button" class="btn bmd-btn-fab bmd-btn-fab-sm">
-                <a href="https://twitter.com/explore" target="_blank"><i class="fab fa-twitter"></i></a>
-            </button>
-            <button type="button" class="btn bmd-btn-fab bmd-btn-fab-sm">
-                <a href="https://www.instagram.com" target="_blank"><i class="fab fa-instagram"></i></a>
-            </button>
-            <button type="button" class="btn bmd-btn-fab bmd-btn-fab-sm">
-                <a href="https://www.youtube.com" target="_blank"><i class="fab fa-youtube"></i></a>
-            </button>
-        </li>
-    </ul>
-    <!-- <img class="footer-image" src="/images/fast-delivery.png" alt="Fast Delivery">
+<footer class="row">
+    <div class="footer col-12 col-sm-8">
+        <ul>Contact Support
+            <li><i class="fas fa-phone-alt"></i>&nbsp; 123456789</li>
+            <li><i class="far fa-envelope"></i><a href="mailto:support@shopkart.com">&nbsp; support@shopkart.com</a></li>
+        </ul>
+        <ul>Social
+            <li>
+                <button type="button" class="btn bmd-btn-fab bmd-btn-fab-sm">
+                    <a href="https://www.facebook.com" target="_blank"><i class="fab fa-facebook-f"></i></a>
+                </button>
+                <button type="button" class="btn bmd-btn-fab bmd-btn-fab-sm">
+                    <a href="https://twitter.com/explore" target="_blank"><i class="fab fa-twitter"></i></a>
+                </button>
+                <button type="button" class="btn bmd-btn-fab bmd-btn-fab-sm">
+                    <a href="https://www.instagram.com" target="_blank"><i class="fab fa-instagram"></i></a>
+                </button>
+                <button type="button" class="btn bmd-btn-fab bmd-btn-fab-sm">
+                    <a href="https://www.youtube.com" target="_blank"><i class="fab fa-youtube"></i></a>
+                </button>
+            </li>
+        </ul>
+            <!-- <img class="footer-image" src="/images/fast-delivery.png" alt="Fast Delivery">
     <div class="delivery">
         <li id="li-1">
             <p><i>ANYWHERE</i></p>
@@ -40,6 +41,12 @@
             <i class="far fa-calendar-alt fa-5x"></i>
         </li>
     </div> -->
+    </div>
+    <% if (!locals.user) { %>
+        <div class="float-right col-12 col-sm-4 mt-5">
+            <a href="/sellers/login" class="btn btn-outline-light" role="button">Sell on shopKart</a>
+        </div>
+    <% } %>
 </footer>
 
 <div class="last-section">

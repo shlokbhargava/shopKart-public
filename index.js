@@ -1,6 +1,5 @@
 const express = require('express');
 const env = require('./config/environment');
-const logger = require('morgan');
 const app = express();
 const expressLayouts = require('express-ejs-layouts');
 const sassMiddleware = require('node-sass-middleware');
@@ -11,6 +10,7 @@ const flash = require('connect-flash');
 const customMware = require('./config/middleware');
 // passport authentication
 const passport = require('passport');
+const sellerPassport = require('passport');
 const passportLocal = require('./config/passport-local-strategy');
 const session = require('express-session');
 const MongoStore = require('connect-mongo')(session);
@@ -54,7 +54,7 @@ app.use(session({
     saveUninitialized: false,
     resave: false,
     cookie: {
-        maxAge: (1000 * 60 * 100)
+        maxAge: (1000 * 240 * 10)
     },
 
     store: new MongoStore(
