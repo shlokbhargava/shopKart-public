@@ -2,7 +2,7 @@
 const development = {
     name: 'development',
     asset_path: './assets',
-    session_cookie_key: '***********',
+    session_cookie_key: 'anything',
     db: 'shopkart_development',
     smtp: {
         service: 'gmail',
@@ -10,8 +10,8 @@ const development = {
         port: 587,
         secure: false, 
         auth: {
-          user: "***************", 
-          pass: "*************", 
+          user: "project.cn20@gmail.com", 
+          pass: "MakINGProJecT2020Cn$", 
         },
       }
 }

@@ -1,4 +1,4 @@
-$('.main header, .second-nav').hide();
+$('header').hide();
 
 
 $('.login-header').css('background-color', 'rgb(250, 249, 246)');

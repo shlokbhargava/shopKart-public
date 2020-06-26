@@ -13,7 +13,7 @@ router.post('/create-session', passport.authenticate(
     { failureRedirect: 'back',
     failureFlash: true }
 ), sellerController.createSession);
-router.get('/home', sellerController.home);
+router.get('/home', passport.checkAuthentication, sellerController.home);
 
 // logout
 router.get('/logout', sellerController.destroySession);

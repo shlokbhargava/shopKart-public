@@ -1,14 +1,15 @@
-header .nav .login-btn {
-  left: 48%;
-  margin-top: 0.5%; }
-
-header .nav .signup-btn {
-  left: 24%;
-  margin-top: 0.5%; }
+.jumbotron {
+  background-image: url("/images/sell-online.jpg");
+  background-size: contain;
+  background-repeat: no-repeat;
+  height: 50vh;
+  font-family: Titillium Web;
+  background-color: #d6e8f3; }
 
 body {
   background-color: white;
-  color: darkblue; }
+  color: darkblue;
+  font-family: Titillium Web; }
 
 .box {
   border: solid 1px #516395; }

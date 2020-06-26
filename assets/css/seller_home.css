@@ -1,31 +1,53 @@
-.nav {
-  margin-top: -0.3%;
-  padding: 15px;
-  background-color: #516395;
+@keyframes graphBars {
+  from {
+    height: 0px; }
+  to {
+    height: 200px; } }
+
+body {
   font-family: Titillium Web; }
+
+.nav {
+  padding: 15px;
+  background-color: #516395; }
   .nav .nav-item {
     left: 6%; }
     .nav .nav-item a {
       color: white; }
     .nav .nav-item a:hover, .nav .nav-item .active {
       color: #e9ddc5;
-      border-bottom: solid 1px #e9ddc5; }
+      border-bottom: solid 1px #e9ddc5;
+      cursor: pointer; }
   .nav .logout {
     left: 18%; }
   .nav .user-name {
     left: 17%; }
 
-.container .row {
-  height: 600px; }
-
-.container #Personal-Information {
-  background-color: #aeaee2; }
-
-.container #Current-Orders {
-  background-color: grey; }
-
-.container #Sell-Product {
-  background-color: lightgray; }
-
-.container #Selling-History {
-  background-color: grey; }
+.container {
+  color: #883a1e; }
+  .container h4 {
+    text-align: center; }
+  .container .row .card {
+    border-radius: 20px;
+    height: 500px; }
+    .container .row .card .left-background {
+      background-color: #d18282;
+      height: 500px;
+      border-radius: 20px 0px 0px 20px; }
+  .container .row #Personal-Information {
+    background-color: #e8e8f1; }
+  .container .row #Current-Orders {
+    background-color: #e5edf1; }
+  .container .row #Sell-Product {
+    background-color: #e8e8f1; }
+  .container .row #Selling-History {
+    background-color: #e5edf1; }
+    .container .row #Selling-History .vertical-line {
+      border: solid 1px black;
+      margin-top: 0px; }
+    .container .row #Selling-History .vertical-bar {
+      width: 40px;
+      background-color: red;
+      height: 200px;
+      margin-top: 200px;
+      animation: fadeInUp 5s; }

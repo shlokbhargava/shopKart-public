@@ -1,26 +1,23 @@
 $border: solid 1px #516395;
 $background-color: rgb(250, 249, 246);
 $color1: darkblue;
+$font-family: Titillium Web;
 
 
-header {
-    .nav {
-        .login-btn {
-            left: 48%;
-            margin-top: 0.5%;
-        }
-    
-        .signup-btn{
-            left: 24%;
-            margin-top: 0.5%;
-        } 
-    }       
+.jumbotron {
+    background-image: url('/images/sell-online.jpg');
+    background-size: contain;
+    background-repeat: no-repeat;
+    height: 50vh;
+    font-family: $font-family;
+    background-color: rgb(214, 232, 243);
 }
 
 
 body {
     background-color: white;
     color: $color1;
+    font-family: $font-family;
 }
 
 .box {

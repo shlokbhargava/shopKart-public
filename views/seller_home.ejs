@@ -2,61 +2,110 @@
 
 
 <header>
-    <ul class="nav justify-content-center mb-5 fixed-top">
+    <ul class="nav justify-content-center fixed-top">
         <li class="nav-item">
-            <a class="nav-link active" href="#Personal-Information">Personal Information</a>
+            <a class="nav-link active personal">Personal Information</a>
         </li>
         <li class="nav-item">
-            <a class="nav-link" href="#Current-Orders">Current Orders</a>
+            <a class="nav-link current">Current Orders</a>
         </li>
         <li class="nav-item">
-            <a class="nav-link" href="#Sell-Product">Sell Product</a>
+            <a class="nav-link sell">Sell Product</a>
         </li>
         <li class="nav-item">
-            <a class="nav-link" href="#Selling-History">Selling History</a>
+            <a class="nav-link history">Selling History</a>
         </li>
-        <% if(locals.user) { %>
-            <a class="btn btn-light active user-name ml-5" role="button" aria-pressed="true"><i class="fas fa-user"></i> <%= user.firstName %></a>
-            <a href="/sellers/logout" role="button" type="button" class="logout btn btn-outline-light">
-                <i class="fas fa-sign-out-alt"></i> Logout
-            </a>
-        <% } %>
+        <a class="btn btn-light active user-name ml-5" role="button" aria-pressed="true"><i class="fas fa-user"></i>
+            <%= user.firstName %></a>
+        <a href="/sellers/logout" role="button" type="button" class="logout btn btn-outline-light">
+            <i class="fas fa-sign-out-alt"></i> Logout
+        </a>
     </ul>
 </header>
 
 
-<div class="container mt-3">
-    <div class="row" id="Personal-Information">
-        <div class="mt-4">
-            <h4 class="mt-5">Personal Information</h4>
+<div class="container mt-5 mb-5">
+    <div class="row">
+
+        <!-- Personal Information -->
+        <div class="col-12 col-sm-10 offset-sm-1 card mt-2" id="Personal-Information">
+            <div class="row">
+                <div class="col-12 col-sm-3 left-background"></div>
+                <form action="/sellers/update/<%= user.id %>" method="POST" class="col-12 col-sm-5 offset-sm-2 mt-5">
+                    <div class="form-group">
+                        <label>Enter First Name<span class="required">*</span></label>
+                        <input type="text" name="firstName" class="form-control" value="<%= user.firstName %>" required>
+                    </div>
+                    <% if(user.lastName) { %>
+                    <div class="form-group">
+                        <label>Enter Last Name</label>
+                        <input type="text" name="lastName" class="form-control" value="<%= user.lastName %>">
+                    </div>
+                    <% } else { %>
+                    <div class="form-group">
+                        <label>Enter Last Name</label>
+                        <input type="text" name="lastName" class="form-control">
+                    </div>
+                    <% } %>
+
+                    <div class="form-group">
+                        <!--Mail Verification-->
+                        <label>Enter Email<span class="required">*</span></label>
+                        <input type="email" name="email" class="form-control" value="<%= user.email %>" required>
+                        <small class="form-text text-muted">Enter a valid email to receive important notifications and
+                            otp</small>
+                    </div>
+
+                    <div class="form-group">
+                        <label>Mobile Number<span class="required">*</span></label>
+                        <!--Mobile Verification-->
+                        <input type="tel" name="mobile" class="form-control" pattern="[7-9]{1}[0-9]{9}"
+                            value="<%= user.mobile %>" required>
+                        <small class="form-text text-muted">Mobile Number will be verified</small>
+                    </div>
+                    <button type="submit" class="btn btn-block btn-outline-primary"><i class="fas fa-user-edit"></i>
+                        Update</button>
+                </form>
+            </div>
         </div>
-    </div>
-    <div class="row" id="Current-Orders">
-        <div class="mt-4">
-            <h4 class="mt-5">Current Orders</h4>
+
+
+        <!-- Current Orders -->
+        <div class="col-12 col-sm-10 offset-sm-1 card mt-2" id="Current-Orders">
+            <div class="row">
+                <div class="col-12 col-sm-3 left-background"></div>
+                <div class="col-12 col-sm-5 offset-sm-2 mt-5">
+                    <img src="/images/orders.jpg" alt="" class="img-fluid">
+                </div>
+            </div>
         </div>
-    </div>
-    <div class="row" id="Sell-Product">
-        <div class="mt-4">
-            <h4 class="mt-5">Sell Product</h4>
+
+
+        <!-- Sell Product -->
+        <div class="col-12 col-sm-10 offset-sm-1 card mt-2" id="Sell-Product">
+            <div class="row">
+                <div class="col-12 col-sm-3 left-background"></div>
+                <div class="col-12 col-sm-5 offset-sm-2 mt-5">
+                    <img src="/images/sell.jpg" alt="" class="img-fluid">
+                </div>
+            </div>
         </div>
-    </div>
-    <div class="row mb-5" id="Selling-History">
-        <div class="mt-4">
-            <h4 class="mt-5">Selling History</h4>
+
+
+        <!-- Selling History -->
+        <div class="col-12 col-sm-10 offset-sm-1 card mt-2" id="Selling-History">
+            <div class="row">
+                <div class="col-12 col-sm-3 left-background"></div>
+                <div class="col-12 col-sm-7 offset-sm-1 mt-5">
+                    <div class="vertical-bar ml-3"></div>
+                    <div class="vertical-line"></div>
+                </div>
+            </div>
         </div>
+
     </div>
 </div>
 
 
 
-
-<script>
-    $('.navbar, .second-nav').hide();
-    $(document).ready(function(){
-        $('ul li a').click(function(){
-            $('li a').removeClass("active");
-            $(this).addClass("active");
-        });
-    });
-</script>
+<script src="/js/seller_home.js"></script>
