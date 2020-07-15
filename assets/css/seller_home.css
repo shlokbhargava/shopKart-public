@@ -38,6 +38,14 @@ body {
     background-color: #e8e8f1; }
   .container .row #Current-Orders {
     background-color: #e5edf1; }
+    .container .row #Current-Orders .outer-circle {
+      background-color: black;
+      border-radius: 50%;
+      height: 200px;
+      width: 200px; }
+      .container .row #Current-Orders .outer-circle .progress-layer {
+        background-color: grey;
+        border-radius: 50%; }
   .container .row #Sell-Product {
     background-color: #e8e8f1; }
   .container .row #Selling-History {
@@ -50,4 +58,4 @@ body {
       background-color: red;
       height: 200px;
       margin-top: 200px;
-      animation: fadeInUp 5s; }
+      animation: graphBars 1s ease; }

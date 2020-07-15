@@ -11,7 +11,7 @@ const sellerSchema = new mongoose.Schema({
     },
     email: {
         type: String,
-        required: true,
+        required: true, 
         unique: true
     },
     mobile: {
@@ -23,6 +23,12 @@ const sellerSchema = new mongoose.Schema({
         type: String,
         required: true
     },
+    product: [
+        {
+            type: mongoose.Schema.Types.ObjectId,
+            ref: 'Product'
+        }
+    ],
 }, {
     timestamps: true
 });

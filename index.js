@@ -7,7 +7,7 @@ const cookieParser = require('cookie-parser');
 const db = require('./config/mongoose');
 const flash = require('connect-flash');
 // Custom Middleware
-const customMware = require('./config/middleware');
+const customMware = require('./config/middleware'); 
 // passport authentication
 const passport = require('passport');
 const sellerPassport = require('passport');
@@ -35,6 +35,8 @@ app.use(cookieParser());
 
 // assets
 app.use(express.static(env.asset_path));
+
+app.use('/uploads', express.static(__dirname + '/uploads'));
 
 // extract styles and scripts from sub pages into layout
 app.set('layout extractStyles', true);

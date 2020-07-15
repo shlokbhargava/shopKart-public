@@ -15,6 +15,9 @@ router.post('/create-session', passport.authenticate(
 ), sellerController.createSession);
 router.get('/home', passport.checkAuthentication, sellerController.home);
 
+// update
+router.post('/update/:id', passport.checkAuthentication, sellerController.updateSeller);
+
 // logout
 router.get('/logout', sellerController.destroySession);
 

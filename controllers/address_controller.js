@@ -107,7 +107,7 @@ exports.deleteAddress = async (req, res) => {
 
         let userId = address.user;
     
-        address.remove();
+        address.remove(); 
     
         await User.findByIdAndUpdate(userId, { $pull: {address: req.params.id}});
     

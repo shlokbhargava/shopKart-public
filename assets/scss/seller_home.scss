@@ -72,6 +72,19 @@ body {
         }
         #Current-Orders {
             background-color: $background-color-2;
+
+            .outer-circle {
+                background-color: black;
+                border-radius: 50%;
+                height: 200px;
+                width: 200px;
+
+                .progress-layer {
+                    background-color: grey;
+                    border-radius: 50%;
+                }
+            }
+
         }   
         #Sell-Product {
             background-color: $background-color-1;
@@ -88,7 +101,7 @@ body {
                 background-color: red;
                 height: 200px;
                 margin-top: 200px;
-                animation: fadeInUp 5s;
+                animation: graphBars 1s ease;
             }
         }   
     }

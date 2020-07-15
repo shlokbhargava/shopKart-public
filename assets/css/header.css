@@ -19,6 +19,8 @@ header {
     header nav .signup-btn {
       left: 12%;
       margin-top: 0.5%; }
+    header nav .cart {
+      margin-top: 0.6%; }
     header nav i {
       font-size: larger; }
     header nav .logout {

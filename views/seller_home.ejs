@@ -4,16 +4,16 @@
 <header>
     <ul class="nav justify-content-center fixed-top">
         <li class="nav-item">
-            <a class="nav-link active personal">Personal Information</a>
+            <a class="nav-link active personal" role="button">Personal Information</a>
         </li>
         <li class="nav-item">
-            <a class="nav-link current">Current Orders</a>
+            <a class="nav-link current" role="button">Current Orders</a>
         </li>
         <li class="nav-item">
-            <a class="nav-link sell">Sell Product</a>
+            <a class="nav-link sell" role="button">Sell Product</a>
         </li>
         <li class="nav-item">
-            <a class="nav-link history">Selling History</a>
+            <a class="nav-link history" role="button">Selling History</a>
         </li>
         <a class="btn btn-light active user-name ml-5" role="button" aria-pressed="true"><i class="fas fa-user"></i>
             <%= user.firstName %></a>
@@ -31,7 +31,7 @@
         <div class="col-12 col-sm-10 offset-sm-1 card mt-2" id="Personal-Information">
             <div class="row">
                 <div class="col-12 col-sm-3 left-background"></div>
-                <form action="/sellers/update/<%= user.id %>" method="POST" class="col-12 col-sm-5 offset-sm-2 mt-5">
+                <form action="/sellers/update/<%= user.id %>" method="POST" class="col-12 col-sm mt-4">
                     <div class="form-group">
                         <label>Enter First Name<span class="required">*</span></label>
                         <input type="text" name="firstName" class="form-control" value="<%= user.firstName %>" required>
@@ -63,19 +63,25 @@
                             value="<%= user.mobile %>" required>
                         <small class="form-text text-muted">Mobile Number will be verified</small>
                     </div>
-                    <button type="submit" class="btn btn-block btn-outline-primary"><i class="fas fa-user-edit"></i>
-                        Update</button>
+                    <button type="submit" class="btn btn-outline-primary"><i class="fas fa-user-edit"></i>
+                        Update
+                    </button>  
+                    <a href="/sellers/" role="button" class="btn btn-outline-primary"><i class="fas fa-key"></i> Change Password</a>     
                 </form>
             </div>
         </div>
 
 
         <!-- Current Orders -->
+        <!--can make ratings reviews-->
+        <!--Company details-->
         <div class="col-12 col-sm-10 offset-sm-1 card mt-2" id="Current-Orders">
             <div class="row">
                 <div class="col-12 col-sm-3 left-background"></div>
-                <div class="col-12 col-sm-5 offset-sm-2 mt-5">
-                    <img src="/images/orders.jpg" alt="" class="img-fluid">
+                <div class="col-12 col-sm-5 offset-sm-2 mt-4">
+                    <div class="outer-circle">
+                        <p class="progress-layer"></p>
+                    </div>
                 </div>
             </div>
         </div>
@@ -85,8 +91,8 @@
         <div class="col-12 col-sm-10 offset-sm-1 card mt-2" id="Sell-Product">
             <div class="row">
                 <div class="col-12 col-sm-3 left-background"></div>
-                <div class="col-12 col-sm-5 offset-sm-2 mt-5">
-                    <img src="/images/sell.jpg" alt="" class="img-fluid">
+                <div class="col-12 col-sm mt-4">
+                    <%- include('_sell-products') -%>
                 </div>
             </div>
         </div>
@@ -96,9 +102,21 @@
         <div class="col-12 col-sm-10 offset-sm-1 card mt-2" id="Selling-History">
             <div class="row">
                 <div class="col-12 col-sm-3 left-background"></div>
-                <div class="col-12 col-sm-7 offset-sm-1 mt-5">
-                    <div class="vertical-bar ml-3"></div>
-                    <div class="vertical-line"></div>
+                <div class="col-12 col-sm-7 offset-sm-1 mt-4">
+                    <!-- <div class="vertical-bar ml-3"></div>
+                    <div class="vertical-line"></div> -->
+                       
+                      <hr style="transform: rotate(90deg);">
+                      <hr class="mt-5">
+                      <hr class="mt-5">
+                      <hr class="mt-5">
+                      <hr class="mt-5">
+                      <hr class="mt-5">
+                      <hr class="mt-5">
+                      <hr class="mt-5">
+                      <hr class="mt-5">
+                      <div class="text-center">Years</div>
+
                 </div>
             </div>
         </div>

@@ -24,7 +24,10 @@
       <button type="button" class="btn btn-outline-light signup-btn" data-toggle="modal" data-target="#signUpModal">
         <i class="fas fa-user-plus"></i> SignUp
       </button>
-      <a href=""><i class="fas fa-shopping-cart"> <span> Cart</span></i></a>
+      <!-- Snackbar -->
+      <button type="button" class="cart btn btn-sm btn-outline-light" data-toggle="snackbar" data-content="You need to Login &nbsp; <a style='color: lightgreen; cursor: pointer;' data-toggle='modal' data-target='#loginModal'> Login Here</a>" data-html-allowed="true" data-timeout="0">
+        <i class="fas fa-shopping-cart"></i> Cart
+      </button>
     <% } %>
   </nav>
 

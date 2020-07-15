@@ -15,7 +15,7 @@ exports.create = async (req, res) => {
             }
 
             return res.render('seller_home', {
-                title: 'shopKart | Home',
+                title: 'shopKart | Seller Home',
                 user: user
             });
         })
@@ -26,10 +26,34 @@ exports.create = async (req, res) => {
 }
 
 
+// Update seller details    
+exports.updateSeller = async (req, res) => {
+    try {
+        let seller = await Seller.findById(req.params.id);
+
+        if (seller) {
+            seller.firstName = req.body.firstName;
+            seller.lastName = req.body.lastName;
+            seller.email = req.body.email;
+            seller.mobile = req.body.mobile;
+    
+            seller.save();
+    
+            req.flash('success', 'Your Profile has been updated');
+            return res.redirect('back');
+        }
+        
+    } catch (err) {
+        req.flash('error', err);
+        return res.redirect('back');
+    }
+}
+
+
 // Render Home Page
 exports.home = (req, res) => {
     return res.render('seller_home', {
-        title: 'shopKart | Home',
+        title: 'shopKart | Sellers Home',
     });
 }
 

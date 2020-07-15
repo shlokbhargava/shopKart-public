@@ -1,0 +1,53 @@
+<form action="/product/new/<%= user._id %>" method="POST">
+    <div class="form-row">
+        <div class="form-group col-sm-6">
+            <label>Product Name<span class="required">*</span></label>
+            <input type="text" name="product_name" class="form-control" required>
+        </div>
+        <div class="form-group col-sm-6">
+            <select style="background-color: rgb(232, 232, 241);" name="product_category" class="custom-select"
+                required>
+                <option selected>Select Product Category</option>
+                <option value="mobile">Electronics-Mobile</option>
+                <option value="footwear">Footwear</option>
+                <option value="clothes">Clothes</option>
+                <option value="grocery">Grocery</option>
+            </select>
+        </div>
+    </div>
+    <div class="form-row">
+        <div class="form-group col-sm-6">
+            <label>Product ID<span class="required">*</span></label>
+            <input type="number" name="product_ID" class="form-control" required>
+        </div>
+        <div class="form-group col-sm-6">
+            <label>Product Price<span class="require">*</span></label>
+            <input type="number" name="product_price" class="form-control" placeholder="Tax Inclusive" required>
+        </div>
+    </div>
+    <div class="form-group">
+        <label>Product Description</label>
+        <textarea class="form-control" name="product_description" aria-label="With textarea"></textarea>
+    </div>
+    <div class="form-row">
+        <div class="form-group col-sm-6">
+            <!-- <img src="<%=  %>" alt=""> -->
+        </div>
+        <!-- <div class="form-group col-sm-6">
+            <label>Product Image</label>
+            <input type="file" name="product_image" class="form-control-file">
+            <br>
+            <div class="form-group">
+                <div class="switch">
+                    <label style="color: rgb(136, 58, 30)">
+                        <input type="checkbox" value="payondelivery">
+                        Pay On Delivery
+                    </label>
+                </div>
+            </div>
+        </div> -->
+    </div>
+    <button type="submit" class="btn btn-outline-primary offset-6">
+        <i class="fas fa-plus"></i> Add Product
+    </button> 
+</form>

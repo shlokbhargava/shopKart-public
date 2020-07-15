@@ -1,0 +1,28 @@
+
+<div class="container">
+    <div class="row">
+        <div class="col-sm-5 col-12" style="height: 600px;">
+
+        </div>
+        <div class="col-sm col-12">
+            <h4><%= product.product_name %></h4>
+            <button type="button" class="btn btn-danger bmd-btn-fab bmd-btn-fab-sm">
+                <i class="material-icons"><i class="far fa-star"></i></i>
+            </button>
+            <p><i class="fas fa-rupee-sign"></i><%= product.product_price %></p>
+            <p>Sold by <%= seller.firstName %></p>
+
+            <p><%= product.product_description %></p>
+
+            <div class="row">
+                <div class="col-sm-6 col-12">
+                    <button type="button" class="btn btn-raised btn-primary btn-block">Add To Cart</button>
+                </div>
+                <div class="col-sm col-12">
+                    <button type="button" class="btn btn-raised btn-success btn-block">Buy Now</button>
+                </div>
+            </div>
+
+        </div>
+    </div>
+</div>

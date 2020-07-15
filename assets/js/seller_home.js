@@ -16,31 +16,29 @@ $(document).ready(function () {
 
 // Nav Links click functions
 $('.personal').click(() => {
+    $('#Personal-Information').css('animation', 'fadeIn 0.5s');
     $('#Personal-Information').show();
-    $('#Personal-Information').css('animation', 'fadeIn 1s');
     $('#Current-Orders').hide();
     $('#Sell-Product').hide();
     $('#Selling-History').hide();
 });
 $('.current').click(() => {
+    $('#Current-Orders').css('animation', 'fadeIn 0.5s');
     $('#Current-Orders').show();
-    $('#Current-Orders').css('animation', 'fadeIn 1s');
     $('#Personal-Information').hide();
     $('#Sell-Product').hide();
     $('#Selling-History').hide();
 });
 $('.sell').click(() => {
+    $('#Sell-Product').css('animation', 'fadeIn 0.5s');
     $('#Sell-Product').show();
-    $('#Sell-Product').css('animation', 'fadeIn 1s');
-    
     $('#Current-Orders').hide();
     $('#Personal-Information').hide();
     $('#Selling-History').hide();
 });
 $('.history').click(() => {
+    $('#Selling-History').css('animation', 'fadeIn 0.5s');
     $('#Selling-History').show();
-    $('#Selling-History').css('animation', 'fadeIn 1s');
-    
     $('#Current-Orders').hide();
     $('#Sell-Product').hide();
     $('#Personal-Information').hide();
