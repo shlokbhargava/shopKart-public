@@ -5,3 +5,29 @@ body {
   top: 32%;
   color: darkmagenta;
   font-family: 'Titillium Web', 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif; }
+
+#carouselMobile, #carouselshoes {
+  font-family: Titillium Web; }
+  #carouselMobile .card-header, #carouselshoes .card-header {
+    background-color: #f0efef;
+    font-size: larger;
+    color: #3f9688; }
+  #carouselMobile .carousel-inner .carousel-item .card-group .card, #carouselshoes .carousel-inner .carousel-item .card-group .card {
+    background-color: #f0efef; }
+    #carouselMobile .carousel-inner .carousel-item .card-group .card img, #carouselshoes .carousel-inner .carousel-item .card-group .card img {
+      margin-left: 25%; }
+    #carouselMobile .carousel-inner .carousel-item .card-group .card .card-body .card-link, #carouselshoes .carousel-inner .carousel-item .card-group .card .card-body .card-link {
+      font-size: medium; }
+    #carouselMobile .carousel-inner .carousel-item .card-group .card .card-body .card-title, #carouselshoes .carousel-inner .carousel-item .card-group .card .card-body .card-title {
+      font-weight: bold;
+      text-align: center; }
+  #carouselMobile .carousel-control-next, #carouselMobile .carousel-control-prev, #carouselshoes .carousel-control-next, #carouselshoes .carousel-control-prev {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 1.5%;
+    text-align: center;
+    opacity: .5; }

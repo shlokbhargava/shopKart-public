@@ -16,3 +16,57 @@ body {
     }
 
 }
+
+
+#carouselMobile, #carouselshoes {
+    $background-color: rgb(240, 239, 239);
+
+
+        font-family: Titillium Web;
+
+        .card-header {
+            background-color: $background-color;
+            font-size: larger;
+            color: #3f9688;
+        }
+        .carousel-inner {
+            
+            .carousel-item {
+
+                .card-group {
+
+                    .card {
+
+                        background-color: $background-color;
+                        img {
+                            margin-left: 25%;
+                        }
+
+                        .card-body {
+
+                            .card-link {
+                                font-size: medium;
+                            }
+                            .card-title {
+                                font-weight: bold;
+                                text-align: center;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+
+
+    .carousel-control-next, .carousel-control-prev {
+        position: absolute;
+        top: 0;
+        bottom: 0;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        width: 1.5%;
+        text-align: center;
+        opacity: .5;
+    }
+}

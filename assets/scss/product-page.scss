@@ -1,0 +1,118 @@
+$border: 2px solid darkblue;
+$star-size: small;
+$padding-left: 8px;
+$background-color: whitesmoke;
+$background: #3f4f7a;
+
+body {
+    font-family: 'Titillium Web';
+}
+
+.container {
+
+    .row {
+
+        #product-name {
+            padding: 8px;
+            height: 50px!important;
+            border-right: $border;
+            border-radius: 4px;
+            background-color: $background-color;
+        }
+
+        #customer-review {
+            padding-left: $padding-left;
+            color: goldenrod;
+            font-size: $star-size;
+
+            p {
+                color: black;
+                display: inline;
+            }
+        }
+
+        #product-price {
+            padding-left: $padding-left;
+            list-style: none;
+
+            span {
+                font-size: larger;
+                color: rgb(179, 42, 42);
+            }
+        }
+
+        #offers {
+            padding-left: $padding-left;
+            background-color: $background-color;
+
+            h5 {
+                color: rgb(223, 79, 43);
+            }
+
+            li {
+                list-style: square;
+
+                a {
+                    color: $background;
+                    cursor: pointer;
+                }
+            }
+        }
+
+        #variants {
+
+            i {
+                border: 1px solid;
+                cursor: pointer;
+                opacity: 0.4;
+            }
+
+            #grey {
+                color: gray;
+                opacity: 1;
+            }
+
+            #green {
+                color: rgb(101, 214, 167);
+            }
+
+            #gold {
+                color: rgb(233, 207, 122);
+            }
+
+            #rose {
+                color: rgb(231, 187, 194);
+            }
+
+        }
+
+        #product-description {
+            background-color: $background-color;
+        }
+
+        .rating {
+            cursor: pointer;
+            color: lightgray;
+            font-size: $star-size;
+        }
+    }
+
+    // .row {
+
+    //     button {
+    //         background-color: $background;
+    //         color: white;
+    //     }
+    // }
+
+    form {
+
+
+        textarea {
+            height: 100px;
+            width: 100%;
+            border-radius: 5px;
+        }
+    }
+}
+
