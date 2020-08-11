@@ -8,6 +8,4 @@ router.use('/users', require('./users'));
 router.use('/sellers', require('./sellers'));
 router.use('/product', require('./product'));
 
-
-
 module.exports = router;

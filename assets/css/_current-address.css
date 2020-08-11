@@ -1,13 +1,12 @@
-.address-info .address-options form {
-  display: inline; }
-
-.address-info .address-options a {
-  left: 1%; }
-
-.address-info .address-options button:hover {
-  background-color: #3f9688;
-  color: white; }
-
-.address-info li {
-  list-style: none;
-  color: black; }
+.address-info .shadow-lg {
+  box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.15) !important; }
+  .address-info .shadow-lg .address-options form {
+    display: inline; }
+  .address-info .shadow-lg .address-options a {
+    left: 1%; }
+  .address-info .shadow-lg .address-options button:hover {
+    background-color: #3f9688;
+    color: white; }
+  .address-info .shadow-lg li {
+    list-style: none;
+    color: black; }

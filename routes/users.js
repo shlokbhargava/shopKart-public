@@ -32,11 +32,20 @@ router.post('/update/:id', passport.checkAuthentication, usersController.updateU
 // Users cart
 router.get('/cart/:id', passport.checkAuthentication, usersController.userCart);
 
-// Handle Payments
-router.post('/checkout-session', passport.checkAuthentication, usersController.session);
+// Add to Cart
+router.get('/cart/add/:id', passport.checkAuthentication, usersController.addToCart);
+
+// Delete from cart
+router.get('/cart/delete/:id', passport.checkAuthentication, usersController.deleteFromCart);
+
+// Checkout cart
+router.get('/checkout/:id', passport.checkAuthentication, usersController.checkOut);
+
+// Order Placed Page
+router.get('/order-confirm/:id', passport.checkAuthentication, usersController.orderPlaced);
 
 // Delete User
-router.post('/delete/:id', passport.checkAuthentication, usersController.delete);
+router.get('/delete/:id', passport.checkAuthentication, usersController.delete);
 
 // For Password reset requests
 router.use('/password', require('./password'));

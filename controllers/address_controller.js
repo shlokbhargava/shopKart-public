@@ -30,6 +30,15 @@ exports.newAddress = async (req, res) => {
     
                 user.address.push(address);
                 user.save();
+
+                if(request.xhr){
+                    return response.status(200).json({
+                        data: {
+                            address: address
+                        },
+                        message: "Address Added!"
+                    });
+                }
     
                 req.flash('success', 'New Address Added');
                 return res.redirect('back');

@@ -1,4 +1,65 @@
+$text-color: white;
+$background-color: #516395;
+$font-family: Titillium Web;
+
+
+body {
+    font-family: $font-family;
+}
+
+
 #checkout-button:hover {
     background-color: rgb(87, 82, 82);
-    color: white;
+    color: $text-color;
+}
+  
+.box {
+    background-color: $text-color;
+    padding: 1.25rem;
+    margin-top: 1.25rem;
+    margin-bottom: 1.25rem;
+    border: 1px solid #eee;
+    border-left-width: 0.25rem;
+    border-radius: 0.25rem;
+    border-left-color: $background-color;
+
+    .details {
+        
+        h5 {
+            color: #0066c0;
+            font-family: 'Heebo';
+        }
+
+        h5:hover {
+            color: purple;
+        }
+
+        a {
+            color: red;
+            text-decoration: none;
+        }
+
+        small {
+            color: green;
+        }
+
+        .quantity {
+            font-size: large;
+            
+            i {
+                cursor: pointer;
+            }
+
+            .max-min-qty {
+                color: darkmagenta;
+                font-weight: bolder;
+            }
+        }
+
+        .float-right {
+            font-size: 1.1rem;
+            color: darkslategrey;
+            font-weight: 900;
+        }
+    }
 }

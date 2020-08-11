@@ -1,17 +1,17 @@
 
 const development = {
     name: '*****',
-    asset_path: './assets',
-    session_cookie_key: '*****',
-    db: 'shopkart_development',
+    asset_path: '******',
+    session_cookie_key: '******',
+    db: '*****',
     smtp: {
         service: '*****',
-        host: "*******",
+        host: "********",
         port: 587,
         secure: false, 
         auth: {
-          user: "****", 
-          pass: "*****", 
+          user: "********", 
+          pass: "***********", 
         },
       }
 }

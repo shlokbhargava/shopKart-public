@@ -28,6 +28,19 @@ const userSchema = new mongoose.Schema({
             ref: 'Address'
         }
     ],
+    cart: [
+        {
+            type: mongoose.Schema.Types.ObjectId,
+            ref: 'Cart'
+        }
+    ],
+    order: [
+        {
+            type: mongoose.Schema.Types.ObjectId,
+            ref: 'UserOrder'
+        }
+    ]
+
 }, {
     timestamps: true
 });

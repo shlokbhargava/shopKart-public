@@ -1,23 +1,27 @@
 .address-info {
 
-    .address-options {
+    .shadow-lg {
+        box-shadow: 0 .5rem 1rem rgba(0,0,0,.15)!important;
 
-        form {
-            display: inline;
+        .address-options {
+
+            form {
+                display: inline;
+            }
+    
+            a {
+                left: 1%;
+            }
+    
+            button:hover {
+                background-color: #3f9688;
+                color: white;
+            }   
         }
-
-        a {
-            left: 1%;
+    
+        li {
+            list-style: none;
+            color: black;
         }
-
-        button:hover {
-            background-color: #3f9688;
-            color: white;
-        }   
-    }
-
-    li {
-        list-style: none;
-        color: black;
     }
 }

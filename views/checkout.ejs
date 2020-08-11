@@ -1,9 +1,87 @@
+<link rel="stylesheet" href="/css/checkout.css">
 
-<%= title %>
+<h3 class="text-center mt-2"><%= title %></h3>
 
-<input id="card-name" type="text">
-<!-- placeholder for Elements -->
-<div id="card-element"></div>
-<button id="card-button" data-secret="{{ client_secret }}">
-  Submit Payment
-</button>
+<div class="container-fluid mb-5 mt-5">
+
+    <div class="row">
+        <div class="col-12 col-sm-6">
+          <% for (address of address) { %>
+          <form action="" class="select-box shadow p-3">
+              <label>
+                <input type="radio" class="float-left" name="optionsRadios" value="<%= address._id %>">
+                <span class="float-right">
+                  <p><b><%= address.fName %> <%= address.lName %></b> &nbsp; <%= address.mNumber %>, <%= address.altNumber %>
+                  </p>
+                  <p><%= address.fNumber %>, <%= address.address %>, <%= address.address2 %></p>
+                  <p><%= address.city %>, <%= address.state %> - <%= address.zip %></p>
+                  <p><%= address.country %></p>
+                </span>
+              </label>
+          </form>
+          <% } %>
+        </div>
+
+      <div class="col-12 col-sm-3 offset-sm-2 bill-box">
+        <div class="card mb-3">
+          <div class="card-header text-white">BILL DETAILS</div>
+          <div class="card-body">
+              <% for (cart of cart) { %>
+                <p><b><%= cart.product.product_name %></b><%= cart.product.product_price %></p>
+              <% } %>
+              <p><b>Delivery</b>FREE</p>
+              <hr>
+              <p><b>Total Payable</b>
+              <hr>
+              <div class="form-group">
+                <label>Apply Coupon</label>
+                <input type="text" id="coupon">
+                <button type="submit" class="btn btn-outline btn-block">Apply Coupon</button>
+                <p class="success-fail"></p>
+              </div>
+              <hr>
+              <!-- Button trigger modal -->
+              <button type="button" class="btn pay btn-block">Pay Now</button>
+              </button>
+          </div>
+        </div> 
+      </div>
+    </div>
+
+</div>
+
+
+<div class="modal fade bd-example-modal-lg" tabindex="-1" role="dialog" aria-hidden="true">
+  <div class="modal-dialog modal-lg">
+    <div class="modal-content">
+      <div class="spinner-border" role="status">
+        <span class="sr-only">Loading...</span>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+
+<!-- Modal -->
+<div class="modal fade bd-example-modal-sm" tabindex="-1" role="dialog" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-centered modal-sm">
+    <div class="modal-content">
+        <div class="modal-header">
+          <i class="far fa-check-circle fa-3x"></i>
+          <p>Payment Successfull</p>
+        </div>
+        <div class="modal-body">
+          <p>Amount Paid ₹</p>
+        </div>
+    </div>
+  </div>
+</div>
+
+
+<a href="/users/order-confirm/<%= user._id %>" id="success-page"></a>
+
+
+
+<script src="/js/checkout.js"></script>
+

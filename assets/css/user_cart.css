@@ -1,3 +1,37 @@
+body {
+  font-family: Titillium Web; }
+
 #checkout-button:hover {
   background-color: #575252;
   color: white; }
+
+.box {
+  background-color: white;
+  padding: 1.25rem;
+  margin-top: 1.25rem;
+  margin-bottom: 1.25rem;
+  border: 1px solid #eee;
+  border-left-width: 0.25rem;
+  border-radius: 0.25rem;
+  border-left-color: #516395; }
+  .box .details h5 {
+    color: #0066c0;
+    font-family: 'Heebo'; }
+  .box .details h5:hover {
+    color: purple; }
+  .box .details a {
+    color: red;
+    text-decoration: none; }
+  .box .details small {
+    color: green; }
+  .box .details .quantity {
+    font-size: large; }
+    .box .details .quantity i {
+      cursor: pointer; }
+    .box .details .quantity .max-min-qty {
+      color: darkmagenta;
+      font-weight: bolder; }
+  .box .details .float-right {
+    font-size: 1.1rem;
+    color: darkslategrey;
+    font-weight: 900; }

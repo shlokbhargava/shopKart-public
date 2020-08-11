@@ -1,5 +1,6 @@
 body {
-  font-family: 'Titillium Web'; }
+  font-family: 'Titillium Web';
+  background-color: #fff; }
 
 .container .row #product-name {
   padding: 8px;
@@ -24,8 +25,7 @@ body {
     color: #b32a2a; }
 
 .container .row #offers {
-  padding-left: 8px;
-  background-color: whitesmoke; }
+  padding-left: 8px; }
   .container .row #offers h5 {
     color: #df4f2b; }
   .container .row #offers li {
@@ -34,31 +34,33 @@ body {
       color: #3f4f7a;
       cursor: pointer; }
 
-.container .row #variants i {
-  border: 1px solid;
-  cursor: pointer;
-  opacity: 0.4; }
-
-.container .row #variants #grey {
-  color: gray;
-  opacity: 1; }
-
-.container .row #variants #green {
-  color: #65d6a7; }
-
-.container .row #variants #gold {
-  color: #e9cf7a; }
-
-.container .row #variants #rose {
-  color: #e7bbc2; }
+.container .row #variants {
+  padding-left: 8px; }
+  .container .row #variants i {
+    border: 1px solid;
+    cursor: pointer;
+    opacity: 0.4; }
+  .container .row #variants #grey {
+    color: gray;
+    opacity: 1; }
+  .container .row #variants #green {
+    color: #65d6a7; }
+  .container .row #variants #gold {
+    color: #e9cf7a; }
+  .container .row #variants #rose {
+    color: #e7bbc2; }
 
 .container .row #product-description {
-  background-color: whitesmoke; }
+  padding-left: 8px; }
 
-.container .row .rating {
-  cursor: pointer;
-  color: lightgray;
-  font-size: small; }
+.container .row #reviews {
+  padding-left: 8px;
+  padding-bottom: 100px; }
+  .container .row #reviews i {
+    color: lightgray; }
+  .container .row #reviews .rating {
+    cursor: pointer;
+    font-size: small; }
 
 .container form textarea {
   height: 100px;
